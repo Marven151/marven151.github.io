@@ -134,6 +134,68 @@
     <h2>Selected work</h2>
 
     <article class="project">
+      <a href="https://marven151.github.io/northside-bikes/"><img src="img/northside-bikes.jpg" alt="Northside Bikes landing page: headline, booking buttons and a repair ticket card" width="1280" height="800" loading="lazy"></a>
+      <div>
+        <h3>Northside Bikes</h3>
+        <p>Landing page for a local bike repair shop (fictional business).</p>
+        <ul>
+          <li>Price list with turnaround times, opening hours and map</li>
+          <li>Booking form with validation and clear error messages</li>
+          <li>Mobile menu, works down to 360&nbsp;px</li>
+        </ul>
+        <div class="stack mono">HTML · CSS · JavaScript</div>
+        <div class="links">
+          <a class="btn" href="https://marven151.github.io/northside-bikes/">Live site</a>
+          <a class="btn" href="https://github.com/Marven151/northside-bikes">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="codebox"><b>$ python scrape.py --category travel --details --out travel.csv</b>
+category=travel page=1 fetching listing
+category=travel done: 11 books, 1 pages
+details 1/11: It's Only the Himalayas
+details 2/11: Full Moon over Noah's Ark
+...
+wrote 11 books to travel.csv</div>
+      <div>
+        <h3>Book scraper</h3>
+        <p>Command-line scraper that turns a product catalogue into a clean spreadsheet.</p>
+        <ul>
+          <li>Follows categories and pagination, optional product-page details</li>
+          <li>Retries with backoff, polite delay between requests</li>
+          <li>Exports CSV, JSON or Excel; parser covered by tests</li>
+        </ul>
+        <div class="stack mono">Python · requests · BeautifulSoup · pytest</div>
+        <div class="links">
+          <a class="btn" href="https://github.com/Marven151/book-scraper">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="codebox"><b>$ python sheet_merge.py orders/ -o merged.xlsx --report</b>
+3 files, 17 rows read
+3 empty rows dropped
+2 duplicates removed
+Wrote 12 rows to merged.xlsx</div>
+      <div>
+        <h3>Sheet merge</h3>
+        <p>Merges messy CSV and Excel exports from different sources into one clean file.</p>
+        <ul>
+          <li>Matches differently named columns (e-mail, mail, email)</li>
+          <li>Fixes dates, whitespace and letter case, removes duplicates</li>
+          <li>Adds a summary sheet with what was changed</li>
+        </ul>
+        <div class="stack mono">Python · pandas · openpyxl · pytest</div>
+        <div class="links">
+          <a class="btn" href="https://github.com/Marven151/sheet-merge">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
       <a href="https://marven151.github.io/sukcyna/"><img src="img/sukcyna.jpg" alt="Sukcyna landing page: dark background, glowing amber stone illustration" width="1280" height="800" loading="lazy"></a>
       <div>
         <h3>Sukcyna</h3>
