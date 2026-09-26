@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Marcin · Web developer</title>
+<meta name="description" content="Freelance web developer from Poland. Landing pages, websites, web scraping and small automation tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f5f1;
+    --surface: #ffffff;
+    --text: #17181a;
+    --muted: #62656b;
+    --line: #dddbd4;
+    --accent: #1f6f4a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121314;
+      --surface: #1b1c1e;
+      --text: #ecebe7;
+      --muted: #9a9ca1;
+      --line: #2c2d30;
+      --accent: #5fc393;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.6 "IBM Plex Sans", system-ui, sans-serif;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 13px; letter-spacing: .02em; }
+
+  header { padding: 72px 0 56px; border-bottom: 1px solid var(--line); }
+  header .mono { color: var(--muted); margin: 0 0 20px; }
+  h1 { font-size: clamp(30px, 5vw, 44px); line-height: 1.15; font-weight: 600; margin: 0 0 18px; letter-spacing: -.01em; }
+  header p.lead { font-size: 18px; color: var(--muted); max-width: 600px; margin: 0 0 28px; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn {
+    display: inline-block; padding: 10px 16px; border: 1px solid var(--line);
+    border-radius: 6px; text-decoration: none; font-weight: 500; background: var(--surface);
+  }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  @media (prefers-color-scheme: dark) { .btn.primary { color: #0d1a13; } }
+  .btn:hover { border-color: var(--text); }
+  .btn.primary:hover { filter: brightness(1.08); border-color: var(--accent); }
+
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 13px; font-family: "IBM Plex Mono", monospace; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 28px; }
+
+  .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 40px; }
+  .services h3 { font-size: 17px; margin: 0 0 6px; font-weight: 600; }
+  .services p { margin: 0; color: var(--muted); }
+
+  .project { display: grid; grid-template-columns: 1.1fr 1fr; gap: 28px; align-items: start; margin-bottom: 48px; }
+  .project:last-child { margin-bottom: 0; }
+  .project img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 6px; }
+  .project h3 { font-size: 20px; margin: 0 0 8px; font-weight: 600; }
+  .project p { margin: 0 0 14px; color: var(--muted); }
+  .project ul { margin: 0 0 16px; padding-left: 18px; color: var(--muted); }
+  .project li { margin-bottom: 4px; }
+  .stack { color: var(--muted); margin-bottom: 14px; }
+  .project .links a { font-size: 15px; }
+  .codebox {
+    border: 1px solid var(--line); border-radius: 6px; background: var(--surface);
+    padding: 18px; font-family: "IBM Plex Mono", monospace; font-size: 13px; line-height: 1.7;
+    color: var(--muted); overflow-x: auto; white-space: pre;
+  }
+  .codebox b { color: var(--text); font-weight: 500; }
+
+  .how { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px 40px; margin: 0; padding: 0; list-style: none; }
+  .how li { padding-left: 18px; position: relative; }
+  .how li::before { content: ""; position: absolute; left: 0; top: .7em; width: 7px; height: 7px; background: var(--accent); border-radius: 50%; }
+
+  footer { padding: 56px 0 72px; }
+  footer p { margin: 0 0 18px; font-size: 18px; }
+  footer .mono { color: var(--muted); margin-top: 40px; }
+
+  @media (max-width: 700px) {
+    header { padding: 48px 0 40px; }
+    .services, .how, .project { grid-template-columns: 1fr; }
+    .project { gap: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <p class="mono">Marcin · Poland · UTC+1/+2 · English &amp; Polish</p>
+    <h1>I build websites, scrapers and small tools that save you time.</h1>
+    <p class="lead">Freelance developer. Landing pages that load fast and look right on phones, scripts that pull data from websites into a spreadsheet, and simple automations for repetitive work.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:marven.15111@gmail.com">marven.15111@gmail.com</a>
+      <a class="btn" href="https://github.com/Marven151">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>What I do</h2>
+    <div class="services">
+      <div>
+        <h3>Landing pages &amp; websites</h3>
+        <p>One-page sites for a product, a service or a rental. Responsive, no page builder, hosted for free on GitHub Pages or Netlify if you like.</p>
+      </div>
+      <div>
+        <h3>Web scraping &amp; data extraction</h3>
+        <p>Product prices, listings, directories, public registers. Delivered as CSV/Excel/JSON, plus the script so you can run it again.</p>
+      </div>
+      <div>
+        <h3>Automation scripts</h3>
+        <p>Python or Node.js scripts for boring tasks: renaming and converting files, merging spreadsheets, scheduled reports.</p>
+      </div>
+      <div>
+        <h3>Fixes to existing sites</h3>
+        <p>Broken layout on mobile, a form that doesn't send, slow page load. Tell me what's wrong and I'll quote a fixed price.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Selected work</h2>
+
+    <article class="project">
+      <a href="https://marven151.github.io/sukcyna/"><img src="img/sukcyna.jpg" alt="Sukcyna landing page: dark background, glowing amber stone illustration" width="1280" height="800" loading="lazy"></a>
+      <div>
+        <h3>Sukcyna</h3>
+        <p>Landing page for a fictional cosmetics brand built around Baltic amber.</p>
+        <ul>
+          <li>Hand-drawn SVG amber stone with a light that follows the cursor</li>
+          <li>Product catalogue and full ingredient table</li>
+          <li>Respects reduced-motion settings, works down to 360&nbsp;px</li>
+        </ul>
+        <div class="stack mono">HTML · CSS · JavaScript · SVG</div>
+        <div class="links">
+          <a class="btn" href="https://marven151.github.io/sukcyna/">Live site</a>
+          <a class="btn" href="https://github.com/Marven151/sukcyna">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <a href="https://marven151.github.io/gaski-apartament/"><img src="img/gaski-apartament.jpg" alt="Holiday apartment website: headline, photo of the living room, booking buttons" width="1280" height="800" loading="lazy"></a>
+      <div>
+        <h3>Apartament Gąski</h3>
+        <p>Website for a holiday apartment on the Polish seaside, with a booking calendar.</p>
+        <ul>
+          <li>Guests pick dates and send an enquiry with the dates filled in</li>
+          <li>Owner marks booked days and exports them as JSON</li>
+          <li>Photo gallery and an OpenStreetMap location map</li>
+        </ul>
+        <div class="stack mono">HTML · CSS · JavaScript · Leaflet</div>
+        <div class="links">
+          <a class="btn" href="https://marven151.github.io/gaski-apartament/">Live site</a>
+          <a class="btn" href="https://github.com/Marven151/gaski-apartament">Code</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="project">
+      <div class="codebox"><b>StudyBuddy API</b>
+POST   /api/auth/register
+POST   /api/auth/login
+GET    /api/tasks
+PATCH  /api/tasks/:id
+GET    /api/notes
+GET    /api/stats/summary</div>
+      <div>
+        <h3>StudyBuddy</h3>
+        <p>Mobile app for students: tasks, notes and a daily streak, with its own backend.</p>
+        <ul>
+          <li>Registration and login with JWT</li>
+          <li>Tasks with tags, priorities and today/week filters</li>
+          <li>REST API on Express with MongoDB</li>
+        </ul>
+        <div class="stack mono">React Native (Expo) · Node.js · Express · MongoDB</div>
+        <div class="links">
+          <a class="btn" href="https://github.com/Marven151/StudyBuddy">Code</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How I work</h2>
+    <ul class="how">
+      <li>Fixed price agreed before I start.</li>
+      <li>Everything in writing, so nothing gets lost.</li>
+      <li>You get the full source code, no lock-in.</li>
+      <li>Small changes after delivery are included.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>Have a task? Send me a short description and I'll reply with a price and a date.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:marven.15111@gmail.com">marven.15111@gmail.com</a>
+    </div>
+    <p class="mono">© 2026 Marcin</p>
+  </div>
+</footer>
+
+</body>
+</html>
