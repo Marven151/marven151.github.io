@@ -115,6 +115,8 @@ h2 { font-size: 13px; font-family: "IBM Plex Mono", monospace; font-weight: 500;
   </div>
 </header>
 
+<main>
+
 <section>
   <div class="wrap">
     <h2>What I do</h2>
@@ -163,13 +165,7 @@ h2 { font-size: 13px; font-family: "IBM Plex Mono", monospace; font-weight: 500;
     </article>
 
     <article class="project">
-      <div class="codebox"><b>$ python scrape.py --category travel --details --out travel.csv</b>
-category=travel page=1 fetching listing
-category=travel done: 11 books, 1 pages
-details 1/11: It's Only the Himalayas
-details 2/11: Full Moon over Noah's Ark
-...
-wrote 11 books to travel.csv</div>
+      <img src="img/book-scraper.jpg" alt="Terminal output of the book scraper and the resulting travel.csv with 11 books" width="1280" height="800" loading="lazy">
       <div>
         <h3>Book scraper</h3>
         <p>Command-line scraper that turns a product catalogue into a clean spreadsheet.</p>
@@ -186,11 +182,7 @@ wrote 11 books to travel.csv</div>
     </article>
 
     <article class="project">
-      <div class="codebox"><b>$ python sheet_merge.py orders/ -o merged.xlsx --report</b>
-3 files, 17 rows read
-3 empty rows dropped
-2 duplicates removed
-Wrote 12 rows to merged.xlsx</div>
+      <img src="img/sheet-merge.jpg" alt="Terminal summary of sheet-merge and the merged spreadsheet of 12 orders from 3 files" width="1280" height="800" loading="lazy">
       <div>
         <h3>Sheet merge</h3>
         <p>Merges messy CSV and Excel exports from different sources into one clean file.</p>
@@ -278,6 +270,8 @@ GET    /api/stats/summary</div>
     </ul>
   </div>
 </section>
+
+</main>
 
 <footer>
   <div class="wrap">
