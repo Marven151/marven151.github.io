@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Marcin · Web developer</title>
 <meta name="description" content="Freelance web developer from Poland. Landing pages, websites, web scraping and small automation tools.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f6f4a'/%3E%3Ctext x='16' y='23' font-size='20' font-family='monospace' font-weight='700' text-anchor='middle' fill='%23fff'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="canonical" href="https://marven151.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Marcin · Web developer">
+<meta property="og:description" content="Freelance web developer from Poland. Landing pages, websites, web scraping and small automation tools.">
+<meta property="og:url" content="https://marven151.github.io/">
+<meta property="og:image" content="https://marven151.github.io/img/northside-bikes.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -50,11 +58,13 @@
   }
   .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
   @media (prefers-color-scheme: dark) { .btn.primary { color: #0d1a13; } }
-  .btn:hover { border-color: var(--text); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn:hover { border-color: var(--text); }
   .btn.primary:hover { filter: brightness(1.08); border-color: var(--accent); }
 
   section { padding: 56px 0; border-bottom: 1px solid var(--line); }
-  h2 { font-size: 13px; font-family: "IBM Plex Mono", monospace; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 28px; }
+  .muted-note { color: var(--muted); margin: -12px 0 32px; max-width: 620px; }
+h2 { font-size: 13px; font-family: "IBM Plex Mono", monospace; font-weight: 500; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin: 0 0 28px; }
 
   .services { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px 40px; }
   .services h3 { font-size: 17px; margin: 0 0 6px; font-weight: 600; }
@@ -96,10 +106,10 @@
 <header>
   <div class="wrap">
     <p class="mono">Marcin · Poland · UTC+1/+2 · English &amp; Polish</p>
-    <h1>I build websites, scrapers and small tools that save you time.</h1>
-    <p class="lead">Freelance developer. Landing pages that load fast and look right on phones, scripts that pull data from websites into a spreadsheet, and simple automations for repetitive work.</p>
+    <h1>Websites, scrapers and scripts, made to order.</h1>
+    <p class="lead">I'm Marcin, a freelance developer from Poland. I make small websites, pull data off the web into spreadsheets, and write scripts for the jobs you're tired of doing by hand.</p>
     <div class="links">
-      <a class="btn primary" href="mailto:marven.15111@gmail.com">marven.15111@gmail.com</a>
+      <a class="btn primary" href="mailto:marven.15111@gmail.com?subject=Project%20inquiry">marven.15111@gmail.com</a>
       <a class="btn" href="https://github.com/Marven151">GitHub</a>
     </div>
   </div>
@@ -111,19 +121,19 @@
     <div class="services">
       <div>
         <h3>Landing pages &amp; websites</h3>
-        <p>One-page sites for a product, a service or a rental. Responsive, no page builder, hosted for free on GitHub Pages or Netlify if you like.</p>
+        <p>One-page sites for a product, a service or a rental. Hand-coded, works on phones, can be hosted free on GitHub Pages or Netlify.</p>
       </div>
       <div>
         <h3>Web scraping &amp; data extraction</h3>
-        <p>Product prices, listings, directories, public registers. Delivered as CSV/Excel/JSON, plus the script so you can run it again.</p>
+        <p>Prices, listings, directories, public registers. You get a CSV, Excel or JSON file and the script, so you can run it again yourself.</p>
       </div>
       <div>
         <h3>Automation scripts</h3>
-        <p>Python or Node.js scripts for boring tasks: renaming and converting files, merging spreadsheets, scheduled reports.</p>
+        <p>Python or Node.js scripts for repetitive stuff: converting files, merging spreadsheets, sending a weekly report.</p>
       </div>
       <div>
         <h3>Fixes to existing sites</h3>
-        <p>Broken layout on mobile, a form that doesn't send, slow page load. Tell me what's wrong and I'll quote a fixed price.</p>
+        <p>Layout broken on mobile, a form that doesn't send, a page that loads slowly. Tell me what's wrong and I'll give you a price.</p>
       </div>
     </div>
   </div>
@@ -132,6 +142,7 @@
 <section>
   <div class="wrap">
     <h2>Selected work</h2>
+    <p class="muted-note">Northside Bikes and Sukcyna are made-up businesses. The rest you can clone and run.</p>
 
     <article class="project">
       <a href="https://marven151.github.io/northside-bikes/"><img src="img/northside-bikes.jpg" alt="Northside Bikes landing page: headline, booking buttons and a repair ticket card" width="1280" height="800" loading="lazy"></a>
@@ -260,19 +271,20 @@ GET    /api/stats/summary</div>
   <div class="wrap">
     <h2>How I work</h2>
     <ul class="how">
-      <li>Fixed price agreed before I start.</li>
-      <li>Everything in writing, so nothing gets lost.</li>
-      <li>You get the full source code, no lock-in.</li>
-      <li>Small changes after delivery are included.</li>
+      <li>Price agreed before I start.</li>
+      <li>We talk by e-mail, so it's all written down.</li>
+      <li>You get all the source code.</li>
+      <li>Small fixes after delivery are free.</li>
     </ul>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Have a task? Send me a short description and I'll reply with a price and a date.</p>
+    <p>Got a job? Write a few lines about it and I'll answer with a price and a date.</p>
     <div class="links">
-      <a class="btn primary" href="mailto:marven.15111@gmail.com">marven.15111@gmail.com</a>
+      <a class="btn primary" href="mailto:marven.15111@gmail.com?subject=Project%20inquiry">marven.15111@gmail.com</a>
+      <a class="btn" href="https://github.com/Marven151">GitHub</a>
     </div>
     <p class="mono">© 2026 Marcin</p>
   </div>
