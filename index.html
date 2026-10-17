@@ -93,7 +93,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .folder .api pre{margin:0;font:15px/1.9 ui-monospace,Menlo,monospace;color:var(--bg)}
 
 /* services */
-.offer{background:var(--bg);padding:clamp(96px,12vw,200px) var(--pad)}
+.offer{background:var(--bg);padding:clamp(96px,12vw,200px) var(--pad) clamp(180px,20vw,340px)}
 .col{max-width:620px;margin:0 auto;container-type:inline-size}
 .giant{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:28cqw;line-height:.8;letter-spacing:-.02em;margin-bottom:24px;white-space:nowrap}
 details.bar{background:var(--tone);margin-bottom:6px}
@@ -106,6 +106,9 @@ details.bar[open] summary .pl{transform:rotate(45deg)}
 details.bar .items{padding:6px 18px 20px}
 .items .it{display:flex;justify-content:space-between;gap:20px;margin-top:14px;font-size:16px}
 .items .it span:last-child{color:#56303f;text-align:right}
+.items .it.ex{margin-top:20px;font-weight:500}
+.items .it.ex span:last-child a{color:var(--ink);text-underline-offset:4px}
+.items .it.ex span:last-child a:hover{text-decoration-thickness:2px}
 
 /* ticket */
 .quote{background:var(--ink);color:var(--ink);padding:clamp(96px,12vw,200px) var(--pad);position:relative}
@@ -258,33 +261,38 @@ details.bar .items{padding:6px 18px 20px}
 </header>
 <main id="main">
 <section class="work" id="prace" aria-labelledby="h-work">
-  <header><h2 class="display" id="h-work">Prace</h2><p>Sześć projektów, wszystkie z kodem na GitHubie.</p></header>
-  <article class="folder" style="--n:0">
+  <header><h2 class="display" id="h-work">Prace</h2><p>Siedem projektów, wszystkie z kodem na GitHubie.</p></header>
+  <article class="folder" id="p0" style="--n:0">
 <div class="tabs"><span class="tab n">Northside Bikes</span><span class="tab s">HTML · CSS · JS</span></div>
 <span class="kind">Strona</span>
 <figure data-reveal><img src="img/northside-bikes.jpg" alt="Strona serwisu rowerowego Northside Bikes: nagłówek, przyciski rezerwacji i karta zlecenia" width="1280" height="800" loading="lazy"></figure>
 <div class="txt" data-reveal style="--d:2"><p>Strona lokalnego serwisu rowerowego (firma fikcyjna). Cennik z czasem naprawy, godziny otwarcia, mapa i formularz rezerwacji z walidacją. Działa na telefonach od 360 px.</p><div class="acts"><a class="btn" href="https://marven151.github.io/northside-bikes/">Zobacz stronę</a><a class="btn o" href="https://github.com/Marven151/northside-bikes">Kod</a></div></div>
-</article><article class="folder" style="--n:1">
+</article><article class="folder" id="p1" style="--n:1">
 <div class="tabs"><span class="tab n">Book scraper</span><span class="tab s">Python · pytest</span></div>
 <span class="kind">Scraper</span>
 <figure data-reveal><img src="img/book-scraper.jpg" alt="Wynik działania scrapera książek: log z terminala i tabela 11 książek w pliku travel.csv" width="1280" height="800" loading="lazy"></figure>
 <div class="txt" data-reveal style="--d:2"><p>Program, który zamienia katalog produktów w czysty arkusz. Chodzi po kategoriach i stronach, ponawia nieudane zapytania, robi przerwy między żądaniami. Zapisuje CSV, JSON albo Excel. Parser pokryty testami.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/book-scraper">Kod</a></div></div>
-</article><article class="folder" style="--n:2">
+</article><article class="folder" id="p2" style="--n:2">
 <div class="tabs"><span class="tab n">Sheet merge</span><span class="tab s">Python · pandas</span></div>
 <span class="kind">Skrypt</span>
 <figure data-reveal><img src="img/sheet-merge.jpg" alt="Podsumowanie sheet-merge i scalony arkusz 12 zamówień z 3 plików" width="1280" height="800" loading="lazy"></figure>
 <div class="txt" data-reveal style="--d:2"><p>Skleja eksporty z różnych sklepów w jeden plik. Rozpoznaje kolumny o różnych nazwach, poprawia daty i wielkość liter, usuwa duplikaty i dodaje arkusz z podsumowaniem zmian.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/sheet-merge">Kod</a></div></div>
-</article><article class="folder" style="--n:3">
+</article><article class="folder" id="p3" style="--n:3">
 <div class="tabs"><span class="tab n">Sukcyna</span><span class="tab s">HTML · CSS · SVG</span></div>
 <span class="kind">Strona</span>
 <figure data-reveal><img src="img/sukcyna.jpg" alt="Strona marki kosmetyków z bursztynem: ciemne tło i świecący bursztyn" width="1280" height="800" loading="lazy"></figure>
 <div class="txt" data-reveal style="--d:2"><p>Strona fikcyjnej marki kosmetyków z bałtyckim bursztynem. Ręcznie narysowany bursztyn z blaskiem podążającym za kursorem, katalog produktów i tabela składników. Respektuje ustawienia ograniczenia ruchu.</p><div class="acts"><a class="btn" href="https://marven151.github.io/sukcyna/">Zobacz stronę</a><a class="btn o" href="https://github.com/Marven151/sukcyna">Kod</a></div></div>
-</article><article class="folder" style="--n:4">
+</article><article class="folder" id="p4" style="--n:4">
 <div class="tabs"><span class="tab n">Apartament Gąski</span><span class="tab s">HTML · CSS · JS</span></div>
 <span class="kind">Strona</span>
 <figure data-reveal><img src="img/gaski-apartament.jpg" alt="Strona apartamentu nad morzem: nagłówek 20 metrów do morza i zdjęcia plaży" width="1280" height="800" loading="lazy"></figure>
 <div class="txt" data-reveal style="--d:2"><p>Strona apartamentu nad morzem z kalendarzem dostępności. Gość wybiera daty i wysyła zapytanie z gotowym terminem, właściciel zaznacza zajęte dni w pliku. Galeria, cennik i mapa z orientacyjnym obszarem.</p><div class="acts"><a class="btn" href="https://marven151.github.io/gaski-apartament/">Zobacz stronę</a><a class="btn o" href="https://github.com/Marven151/gaski-apartament">Kod</a></div></div>
-</article><article class="folder" style="--n:5">
+</article><article class="folder" id="p5" style="--n:5">
+<div class="tabs"><span class="tab n">Piekarnia: przed i po</span><span class="tab s">HTML · Lighthouse</span></div>
+<span class="kind">Poprawki</span>
+<figure data-reveal><img src="img/site-fix-demo.jpg" alt="Strona porównująca zepsutą i naprawioną stronę piekarni, z wynikami Lighthouse" width="1280" height="800" loading="lazy"></figure>
+<div class="txt" data-reveal style="--d:2"><p>Zepsuta strona małej firmy i ta sama po poprawkach: układ dopasowany do telefonu, zdjęcia z 4,9 MB do 303 KB, działający formularz, czytelny tekst. Wydajność 75 → 99, dostępność 45 → 100 (Lighthouse).</p><div class="acts"><a class="btn" href="https://marven151.github.io/site-fix-demo/">Zobacz stronę</a><a class="btn o" href="https://github.com/Marven151/site-fix-demo">Kod</a></div></div>
+</article><article class="folder" id="p6" style="--n:6">
 <div class="tabs"><span class="tab n">StudyBuddy</span><span class="tab s">React Native · Node</span></div>
 <span class="kind">Aplikacja</span>
 <div class="api" data-ui data-reveal><pre><code>POST   /api/auth/register
@@ -297,7 +305,7 @@ GET    /api/stats/summary</code></pre></div>
 </article>
 </section>
 <section class="offer" aria-label="Co robię">
-  <div class="col"><h2 class="giant" data-reveal style="font-size:26.7cqw">Oferta</h2><details class="bar" open data-reveal style="--d:0"><summary><span>Strony dla firm</span><span class="p">od 990 zł</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Strona jednostronicowa</span><span>oferta, godziny, mapa, formularz</span></div><div class="it"><span>Telefon</span><span>dopasowana do małych ekranów</span></div><div class="it"><span>Hosting</span><span>za darmo, np. GitHub Pages lub Netlify</span></div><div class="it"><span>Kod</span><span>cały jest twój</span></div></div></details><details class="bar" data-reveal style="--d:1"><summary><span>Pobieranie danych</span><span class="p">od 350 zł</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Ceny, oferty, katalogi</span><span>z publicznych stron</span></div><div class="it"><span>Plik</span><span>CSV, Excel lub JSON</span></div><div class="it"><span>Skrypt</span><span>żebyś mógł go uruchomić ponownie</span></div></div></details><details class="bar" data-reveal style="--d:2"><summary><span>Skrypty i automatyzacje</span><span class="p">od 250 zł</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Pliki</span><span>zmiana nazw, konwersja, porządkowanie</span></div><div class="it"><span>Arkusze</span><span>scalanie i czyszczenie danych</span></div><div class="it"><span>Raporty</span><span>cykliczne, wysyłane mailem</span></div></div></details><details class="bar" data-reveal style="--d:3"><summary><span>Poprawki istniejącej strony</span><span class="p">od 150 zł</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Układ</span><span>naprawa na telefonie</span></div><div class="it"><span>Formularz</span><span>który nie wysyła</span></div><div class="it"><span>Szybkość</span><span>wolno ładująca się strona</span></div></div></details></div>
+  <div class="col"><h2 class="giant" data-reveal style="font-size:26.7cqw">Oferta</h2><details class="bar" open data-reveal style="--d:0"><summary><span>Strony dla firm</span><span class="p">od 990 zł</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Strona jednostronicowa</span><span>oferta, godziny, mapa, formularz</span></div><div class="it"><span>Telefon</span><span>dopasowana do małych ekranów</span></div><div class="it"><span>Hosting</span><span>za darmo, np. GitHub Pages lub Netlify</span></div><div class="it"><span>Kod</span><span>cały jest twój</span></div><div class="it ex"><span>Przykład</span><span><a href="#p0">Northside Bikes</a>, <a href="#p3">Sukcyna</a>, <a href="#p4">Apartament Gąski</a></span></div></div></details><details class="bar" data-reveal style="--d:1"><summary><span>Pobieranie danych</span><span class="p">od 350 zł</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Ceny, oferty, katalogi</span><span>z publicznych stron</span></div><div class="it"><span>Plik</span><span>CSV, Excel lub JSON</span></div><div class="it"><span>Skrypt</span><span>żebyś mógł go uruchomić ponownie</span></div><div class="it ex"><span>Przykład</span><span><a href="#p1">Book scraper</a></span></div></div></details><details class="bar" data-reveal style="--d:2"><summary><span>Skrypty i automatyzacje</span><span class="p">od 250 zł</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Pliki</span><span>zmiana nazw, konwersja, porządkowanie</span></div><div class="it"><span>Arkusze</span><span>scalanie i czyszczenie danych</span></div><div class="it"><span>Raporty</span><span>cykliczne, wysyłane mailem</span></div><div class="it ex"><span>Przykład</span><span><a href="#p2">Sheet merge</a></span></div></div></details><details class="bar" data-reveal style="--d:3"><summary><span>Poprawki istniejącej strony</span><span class="p">od 150 zł</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Układ</span><span>naprawa na telefonie</span></div><div class="it"><span>Formularz</span><span>który nie wysyła</span></div><div class="it"><span>Szybkość</span><span>wolno ładująca się strona</span></div><div class="it ex"><span>Przykład</span><span><a href="#p5">Piekarnia: przed i po</a></span></div></div></details></div>
 </section>
 <section class="quote" id="wycena" aria-labelledby="h-quote">
   <div class="ticket" data-reveal>
