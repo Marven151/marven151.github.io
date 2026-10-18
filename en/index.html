@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin, strony i automatyzacje", "url": "https://marven151.github.io/", "email": "marcin.strony.www@gmail.com", "description": "Websites for small businesses, data extraction and automation. Fixed price up front.", "areaServed": "PL", "priceRange": "od 150 zł", "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": ["en"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business website"}, "priceSpecification": {"@type": "PriceSpecification", "price": 990, "priceCurrency": "PLN", "minPrice": 990}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data extraction"}, "priceSpecification": {"@type": "PriceSpecification", "price": 350, "priceCurrency": "PLN", "minPrice": 350}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Script or automation"}, "priceSpecification": {"@type": "PriceSpecification", "price": 250, "priceCurrency": "PLN", "minPrice": 250}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website fixes"}, "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "PLN", "minPrice": 150}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin Świerczyński, strony i automatyzacje", "url": "https://marven151.github.io/", "email": "marcin.strony.www@gmail.com", "telephone": "+48736645005", "founder": {"@type": "Person", "name": "Marcin Świerczyński"}, "description": "Websites for small businesses, data extraction and automation. Fixed price up front.", "areaServed": "PL", "priceRange": "od 150 zł", "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": ["en"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business website"}, "priceSpecification": {"@type": "PriceSpecification", "price": 990, "priceCurrency": "PLN", "minPrice": 990}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data extraction"}, "priceSpecification": {"@type": "PriceSpecification", "price": 350, "priceCurrency": "PLN", "minPrice": 350}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Script or automation"}, "priceSpecification": {"@type": "PriceSpecification", "price": 250, "priceCurrency": "PLN", "minPrice": 250}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website fixes"}, "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "PLN", "minPrice": 150}}]}</script>
 <style>
 :root{
   --bg:#edccbe; --tone:#e3b9a8; --tone2:#d6a998; --ink:#351a2b; --muted:#6c4857; --ink2:#4a2a3e; --ink3:#241120;
@@ -178,6 +178,13 @@ details.bar .items{padding:6px 18px 20px}
 .slip .r i{flex:1;border-bottom:4px dotted var(--bg);transform:translateY(-4px);opacity:.7}
 .slip .end{margin:36px -36px 0;padding:0 36px;min-height:56px;display:flex;align-items:center;background:var(--bg);color:var(--ink);font-weight:500}
 
+.rules{background:var(--tone);color:var(--ink);padding:clamp(96px,12vw,200px) var(--pad)}
+.rules h2{font-size:clamp(2.5rem,4.4vw,4.25rem);margin-bottom:56px}
+.rules dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:28px var(--m);max-width:1100px}
+.rules dt{font-weight:500;font-size:1.25rem}
+.rules dd{margin:0;max-width:60ch}
+.tel{margin-top:20px;font-size:1.25rem}
+.tel a{text-underline-offset:4px}
 /* faq */
 .faq{background:var(--ink);color:var(--ink);padding:clamp(96px,12vw,200px) var(--pad);overflow-x:clip}
 .faq h2{color:var(--bg);font-size:clamp(2.5rem,4vw,4rem);max-width:1100px;margin:0 auto 72px}
@@ -239,6 +246,7 @@ details.bar .items{padding:6px 18px 20px}
 }
 
 @media (max-height:820px){.folder{position:relative;top:auto}}
+@media (max-width:760px){.rules dl{grid-template-columns:1fr;gap:6px}.rules dd{margin-bottom:22px}}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;display:flex;flex-direction:column}
   .photo{order:-1;position:relative;top:0;height:48svh}
@@ -282,7 +290,7 @@ details.bar .items{padding:6px 18px 20px}
     <div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <p class="mark display">Marcin</p>
     <h1 class="display">A website from PLN 990.<br>Price up front.</h1>
-    <p class="lead">I&#x27;m Marcin. I build websites for small businesses, pull data into spreadsheets and write scripts for tedious jobs. You get all the code.</p>
+    <p class="lead">I&#x27;m Marcin Świerczyński. I build websites for small businesses, pull data into spreadsheets and write scripts for tedious jobs. You get all the code.</p>
     <a class="btn" href="#wycena">Get an estimate</a>
     <nav class="links" aria-label="Main">
       <a href="#prace">Work</a><a href="#jak">How I work</a><a href="#pytania">Questions</a><a href="https://marven151.github.io/" hreflang="pl" lang="pl" aria-label="PL, Wersja polska">PL</a>
@@ -380,13 +388,17 @@ GET    /api/stats/summary</code></pre></div>
   <div class="hd" data-reveal><h2 class="display" id="h-how">How it works</h2><p>You write, you get a price and a date, then I get to work.</p></div>
   <div class="slip" data-reveal style="--d:2"><h3>At the start</h3><div class="r"><span>You describe what you need</span><i></i><span>e-mail</span></div><div class="r"><span>You get a price and a date</span><i></i><span>up front</span></div><h3>Along the way</h3><div class="r"><span>I show progress</span><i></i><span>as it goes</span></div><div class="r"><span>Changes after your notes</span><i></i><span>included</span></div><div class="end">At the end you have the finished files and all the code</div></div>
 </section>
+<section class="rules" id="zasady" aria-labelledby="h-rules">
+  <h2 class="display" id="h-rules" data-reveal>How we work together</h2>
+  <dl data-reveal style="--d:1"><dt>Included from PLN 990</dt><dd>One page with a few sections, built for phones, published, with two rounds of changes. A contact form, map, calendar, English version and help with the domain are extras in the estimate.</dd><dt>Timing</dt><dd>I show the first version within 5 working days of agreeing the scope and receiving the deposit. The exact date comes with the estimate.</dd><dt>Payment</dt><dd>30% deposit before I start, the rest after you approve, before I hand over the files. By bank transfer.</dd><dt>Backing out</dt><dd>If you don&#x27;t want to continue after seeing the first version, I refund the deposit in full.</dd><dt>Changes</dt><dd>Two rounds of changes are included. Further ones I quote separately, up front.</dd><dt>Files and domain</dt><dd>You get every file. You register the domain in your own name, usually a few dozen zloty a year, and I help connect it. You provide the texts and photos unless we agree otherwise.</dd><dt>Invoicing</dt><dd>We agree the form, a contract for a specific work or an invoice, in writing before I start.</dd></dl>
+</section>
 <section class="faq" id="pytania" aria-labelledby="h-faq">
   <h2 class="display" id="h-faq">Questions</h2>
   <div class="cards"><details data-tab="Clients" style="--i:0" open data-reveal><summary>Do you have clients yet?</summary><p>Not yet. I built every project above for myself, so I price the first jobs carefully and show progress as I go, so you&#x27;re not buying a pig in a poke.</p></details><details data-tab="Price" style="--i:1" data-reveal><summary>What does it really cost?</summary><p>The figures in the estimate are starting prices for small projects. I give the exact price by e-mail before I start, and it doesn&#x27;t change while the scope stays the same.</p></details><details data-tab="Code" style="--i:2" data-reveal><summary>Whose is the code?</summary><p>Yours. You get every file. The site doesn&#x27;t depend on me, anyone can make the next changes.</p></details><details data-tab="Hosting" style="--i:3" data-reveal><summary>Where will the site live?</summary><p>On free hosting by default, e.g. GitHub Pages or Netlify. If you already have hosting or a domain, I&#x27;ll help connect it.</p></details><details data-tab="Changes" style="--i:4" data-reveal><summary>And if something needs changing after delivery?</summary><p>Small fixes are included. Bigger changes I quote separately, also up front.</p></details><details data-tab="Data" style="--i:5" data-reveal><summary>Is scraping legal?</summary><p>I only take what anyone can see on a public page and I don&#x27;t get around protections. If something looks doubtful I&#x27;ll say so straight away.</p></details></div>
 </section>
 <section class="contact" id="kontakt" aria-labelledby="h-contact">
   <div class="coupon" data-reveal>
-    <div class="l"><h2 class="display" id="h-contact">Tell me what you need</h2><p>A few sentences are enough. I reply by e-mail with a price and a date.</p></div>
+    <div class="l"><h2 class="display" id="h-contact">Tell me what you need</h2><p>A few sentences are enough. I reply by e-mail with a price and a date.</p><p class="tel"><a href="tel:+48736645005">736 645 005</a></p></div>
     <form id="contactForm">
       <label class="sr" for="f1">Name</label><input id="f1" name="name" placeholder="Name" autocomplete="name" required>
       <label class="sr" for="f2">Your e-mail</label><input id="f2" name="mail" type="email" placeholder="Your e-mail" autocomplete="email" required>
@@ -401,8 +413,8 @@ GET    /api/stats/summary</code></pre></div>
   <div class="back">
     <div class="stamp" aria-hidden="true"><img src="../img/sukcyna.jpg" alt="" width="1280" height="800" loading="lazy"></div>
     <div><h2 class="display">Talk soon</h2><p class="msg">I answer every e-mail. The more specific you are about what you need, the sooner you get a price.</p></div>
-    <address><a href="mailto:marcin.strony.www@gmail.com">marcin.strony.www@gmail.com</a><a href="https://github.com/Marven151">GitHub</a></address>
-    <p class="imp">© 2026 Marcin, Poland</p>
+    <address><a href="mailto:marcin.strony.www@gmail.com">marcin.strony.www@gmail.com</a><a href="tel:+48736645005">736 645 005</a><a href="https://github.com/Marven151">GitHub</a></address>
+    <p class="imp">© 2026 Marcin Świerczyński · <a href="https://marven151.github.io/informacja/">Data processing information</a></p>
   </div>
 </footer>
 <script type="application/json" id="i18n">{"services": [{"id": "site", "label": "Business website", "base": 990, "extras": [["Contact form", 100], ["Map", 50], ["Availability calendar", 450], ["English version", 250], ["Help with the domain", 100]]}, {"id": "scrape", "label": "Data extraction", "base": 350, "extras": [["Another data source", 150], ["Data from product pages", 100], ["Re-runnable version", 100]]}, {"id": "script", "label": "Script or automation", "base": 250, "extras": [["E-mailed report", 120], ["Several file formats", 100]]}, {"id": "fix", "label": "Website fixes", "base": 150, "extras": [["Extra page", 120], ["Faster loading", 100]]}], "mail": "marcin.strony.www@gmail.com", "subject": "Estimate enquiry", "intro": "Hello,\n\nI'd like to ask about an estimate.\n\nScope: ", "extrasLabel": "\nExtras: ", "none": "none", "priceLabel": "\nApproximately: from ", "cur": "PLN", "outro": "\n\nA few words about the business and what you need:\n\nBest regards", "fsubject": "Enquiry from the website", "fbody": "Name: {name}\nE-mail: {mail}\n\n{msg}"}</script>

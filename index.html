@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin, strony i automatyzacje", "url": "https://marven151.github.io/", "email": "marcin.strony.www@gmail.com", "description": "Strony internetowe dla małych firm, pobieranie danych i automatyzacje. Cena z góry.", "areaServed": "PL", "priceRange": "od 150 zł", "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": ["pl"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strona dla firmy"}, "priceSpecification": {"@type": "PriceSpecification", "price": 990, "priceCurrency": "PLN", "minPrice": 990}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pobieranie danych"}, "priceSpecification": {"@type": "PriceSpecification", "price": 350, "priceCurrency": "PLN", "minPrice": 350}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Skrypt lub automatyzacja"}, "priceSpecification": {"@type": "PriceSpecification", "price": 250, "priceCurrency": "PLN", "minPrice": 250}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Poprawki strony"}, "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "PLN", "minPrice": 150}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin Świerczyński, strony i automatyzacje", "url": "https://marven151.github.io/", "email": "marcin.strony.www@gmail.com", "telephone": "+48736645005", "founder": {"@type": "Person", "name": "Marcin Świerczyński"}, "description": "Strony internetowe dla małych firm, pobieranie danych i automatyzacje. Cena z góry.", "areaServed": "PL", "priceRange": "od 150 zł", "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": ["pl"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strona dla firmy"}, "priceSpecification": {"@type": "PriceSpecification", "price": 990, "priceCurrency": "PLN", "minPrice": 990}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Pobieranie danych"}, "priceSpecification": {"@type": "PriceSpecification", "price": 350, "priceCurrency": "PLN", "minPrice": 350}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Skrypt lub automatyzacja"}, "priceSpecification": {"@type": "PriceSpecification", "price": 250, "priceCurrency": "PLN", "minPrice": 250}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Poprawki strony"}, "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "PLN", "minPrice": 150}}]}</script>
 <style>
 :root{
   --bg:#edccbe; --tone:#e3b9a8; --tone2:#d6a998; --ink:#351a2b; --muted:#6c4857; --ink2:#4a2a3e; --ink3:#241120;
@@ -178,6 +178,13 @@ details.bar .items{padding:6px 18px 20px}
 .slip .r i{flex:1;border-bottom:4px dotted var(--bg);transform:translateY(-4px);opacity:.7}
 .slip .end{margin:36px -36px 0;padding:0 36px;min-height:56px;display:flex;align-items:center;background:var(--bg);color:var(--ink);font-weight:500}
 
+.rules{background:var(--tone);color:var(--ink);padding:clamp(96px,12vw,200px) var(--pad)}
+.rules h2{font-size:clamp(2.5rem,4.4vw,4.25rem);margin-bottom:56px}
+.rules dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:28px var(--m);max-width:1100px}
+.rules dt{font-weight:500;font-size:1.25rem}
+.rules dd{margin:0;max-width:60ch}
+.tel{margin-top:20px;font-size:1.25rem}
+.tel a{text-underline-offset:4px}
 /* faq */
 .faq{background:var(--ink);color:var(--ink);padding:clamp(96px,12vw,200px) var(--pad);overflow-x:clip}
 .faq h2{color:var(--bg);font-size:clamp(2.5rem,4vw,4rem);max-width:1100px;margin:0 auto 72px}
@@ -239,6 +246,7 @@ details.bar .items{padding:6px 18px 20px}
 }
 
 @media (max-height:820px){.folder{position:relative;top:auto}}
+@media (max-width:760px){.rules dl{grid-template-columns:1fr;gap:6px}.rules dd{margin-bottom:22px}}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;display:flex;flex-direction:column}
   .photo{order:-1;position:relative;top:0;height:48svh}
@@ -282,7 +290,7 @@ details.bar .items{padding:6px 18px 20px}
     <div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <p class="mark display">Marcin</p>
     <h1 class="display">Strona od 990 zł.<br>Cena z góry.</h1>
-    <p class="lead">Jestem Marcin. Robię strony dla małych firm, pobieram dane do arkuszy i piszę skrypty do żmudnych zadań. Cały kod dostajesz ty.</p>
+    <p class="lead">Jestem Marcin Świerczyński. Robię strony dla małych firm, pobieram dane do arkuszy i piszę skrypty do żmudnych zadań. Cały kod dostajesz ty.</p>
     <a class="btn" href="#wycena">Policz wycenę</a>
     <nav class="links" aria-label="Główne">
       <a href="#prace">Prace</a><a href="#jak">Jak pracuję</a><a href="#pytania">Pytania</a><a href="https://marven151.github.io/en/" hreflang="en" lang="en" aria-label="EN, English version">EN</a>
@@ -380,13 +388,17 @@ GET    /api/stats/summary</code></pre></div>
   <div class="hd" data-reveal><h2 class="display" id="h-how">Jak to wygląda</h2><p>Piszesz, dostajesz cenę i termin, potem robię.</p></div>
   <div class="slip" data-reveal style="--d:2"><h3>Na początku</h3><div class="r"><span>Opisujesz, czego potrzebujesz</span><i></i><span>mail</span></div><div class="r"><span>Dostajesz wycenę i termin</span><i></i><span>z góry</span></div><h3>W trakcie</h3><div class="r"><span>Pokazuję postęp</span><i></i><span>na bieżąco</span></div><div class="r"><span>Poprawki według uwag</span><i></i><span>wliczone</span></div><div class="end">Na końcu masz gotowe pliki i cały kod</div></div>
 </section>
+<section class="rules" id="zasady" aria-labelledby="h-rules">
+  <h2 class="display" id="h-rules" data-reveal>Zasady współpracy</h2>
+  <dl data-reveal style="--d:1"><dt>W cenie od 990 zł</dt><dd>Jedna strona z kilkoma sekcjami, dopasowana do telefonu, z publikacją i dwiema rundami poprawek. Formularz, mapa, kalendarz, wersja angielska i pomoc z domeną to dodatki z kalkulatora.</dd><dt>Termin</dt><dd>Pierwszą wersję pokazuję w 5 dni roboczych od ustalenia zakresu i wpłaty zaliczki. Dokładny termin podaję w wycenie.</dd><dt>Płatność</dt><dd>30% zaliczki przed startem, reszta po twojej akceptacji, przed przekazaniem plików. Przelewem.</dd><dt>Rezygnacja</dt><dd>Jeśli po obejrzeniu pierwszej wersji nie chcesz kontynuować, zwracam zaliczkę w całości.</dd><dt>Poprawki</dt><dd>Dwie rundy zmian są w cenie. Kolejne wyceniam osobno, z góry.</dd><dt>Pliki i domena</dt><dd>Dostajesz wszystkie pliki. Domenę rejestrujesz na siebie, zwykle to kilkadziesiąt złotych rocznie, a ja pomagam ją podłączyć. Teksty i zdjęcia dostarczasz ty, chyba że ustalimy inaczej.</dd><dt>Rozliczenie</dt><dd>Formę rozliczenia, czyli umowę o dzieło albo fakturę, ustalamy na piśmie przed startem.</dd></dl>
+</section>
 <section class="faq" id="pytania" aria-labelledby="h-faq">
   <h2 class="display" id="h-faq">Pytania</h2>
   <div class="cards"><details data-tab="Klienci" style="--i:0" open data-reveal><summary>Masz już klientów?</summary><p>Jeszcze nie. Wszystkie projekty wyżej zrobiłem sam dla siebie, dlatego pierwsze zlecenia wyceniam ostrożnie i pokazuję postęp na bieżąco, żebyś nie kupował kota w worku.</p></details><details data-tab="Cena" style="--i:1" data-reveal><summary>Ile to naprawdę kosztuje?</summary><p>Kwoty w wycenie to cena początkowa dla małych projektów. Dokładną podaję w mailu, zanim zacznę, i nie zmienia się, dopóki zakres jest ten sam.</p></details><details data-tab="Kod" style="--i:2" data-reveal><summary>Czyj jest kod?</summary><p>Twój. Dostajesz wszystkie pliki. Strona nie zależy ode mnie, kolejne zmiany może robić każdy.</p></details><details data-tab="Hosting" style="--i:3" data-reveal><summary>Gdzie będzie strona?</summary><p>Domyślnie na darmowym hostingu, np. GitHub Pages albo Netlify. Jeśli masz już własny hosting lub domenę, pomogę je podłączyć.</p></details><details data-tab="Poprawki" style="--i:4" data-reveal><summary>A jak coś trzeba zmienić po oddaniu?</summary><p>Drobne poprawki są w cenie. Większe zmiany wyceniam osobno, też z góry.</p></details><details data-tab="Dane" style="--i:5" data-reveal><summary>Czy pobieranie danych jest legalne?</summary><p>Biorę tylko to, co każdy widzi na publicznej stronie, i nie obchodzę zabezpieczeń. Jeśli coś budzi wątpliwości, powiem to od razu.</p></details></div>
 </section>
 <section class="contact" id="kontakt" aria-labelledby="h-contact">
   <div class="coupon" data-reveal>
-    <div class="l"><h2 class="display" id="h-contact">Napisz, czego potrzebujesz</h2><p>Kilka zdań wystarczy. Odpowiadam mailem z ceną i terminem.</p></div>
+    <div class="l"><h2 class="display" id="h-contact">Napisz, czego potrzebujesz</h2><p>Kilka zdań wystarczy. Odpowiadam mailem z ceną i terminem.</p><p class="tel"><a href="tel:+48736645005">736 645 005</a></p></div>
     <form id="contactForm">
       <label class="sr" for="f1">Imię</label><input id="f1" name="name" placeholder="Imię" autocomplete="name" required>
       <label class="sr" for="f2">Twój e-mail</label><input id="f2" name="mail" type="email" placeholder="Twój e-mail" autocomplete="email" required>
@@ -401,8 +413,8 @@ GET    /api/stats/summary</code></pre></div>
   <div class="back">
     <div class="stamp" aria-hidden="true"><img src="img/sukcyna.jpg" alt="" width="1280" height="800" loading="lazy"></div>
     <div><h2 class="display">Do usłyszenia</h2><p class="msg">Odpisuję na każdy mail. Im konkretniej opiszesz, czego potrzebujesz, tym szybciej dostaniesz cenę.</p></div>
-    <address><a href="mailto:marcin.strony.www@gmail.com">marcin.strony.www@gmail.com</a><a href="https://github.com/Marven151">GitHub</a></address>
-    <p class="imp">© 2026 Marcin, Polska</p>
+    <address><a href="mailto:marcin.strony.www@gmail.com">marcin.strony.www@gmail.com</a><a href="tel:+48736645005">736 645 005</a><a href="https://github.com/Marven151">GitHub</a></address>
+    <p class="imp">© 2026 Marcin Świerczyński · <a href="https://marven151.github.io/informacja/">Informacja o przetwarzaniu danych</a></p>
   </div>
 </footer>
 <script type="application/json" id="i18n">{"services": [{"id": "site", "label": "Strona dla firmy", "base": 990, "extras": [["Formularz kontaktowy", 100], ["Mapa dojazdu", 50], ["Kalendarz dostępności", 450], ["Wersja angielska", 250], ["Pomoc z domeną", 100]]}, {"id": "scrape", "label": "Pobieranie danych", "base": 350, "extras": [["Kolejne źródło danych", 150], ["Dane z podstron produktów", 100], ["Wersja do ponownego uruchamiania", 100]]}, {"id": "script", "label": "Skrypt lub automatyzacja", "base": 250, "extras": [["Raport mailem", 120], ["Obsługa wielu formatów plików", 100]]}, {"id": "fix", "label": "Poprawki strony", "base": 150, "extras": [["Dodatkowa podstrona", 120], ["Przyspieszenie ładowania", 100]]}], "mail": "marcin.strony.www@gmail.com", "subject": "Zapytanie o wycenę", "intro": "Dzień dobry,\n\nchciałbym zapytać o wycenę.\n\nZakres: ", "extrasLabel": "\nDodatki: ", "none": "brak", "priceLabel": "\nOrientacyjnie: od ", "cur": "zł", "outro": "\n\nKrótko o firmie i potrzebach:\n\nPozdrawiam", "fsubject": "Zapytanie ze strony", "fbody": "Imię: {name}\nE-mail: {mail}\n\n{msg}"}</script>
