@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marcin — websites for small businesses, from PLN 990</title>
-<meta name="description" content="Websites for local businesses, data scrapers and scripts. Fixed price up front, all the code is yours. Get an estimate in a minute.">
+<title>Marcin: websites for small businesses, from PLN 990</title>
+<meta name="description" content="Websites for small businesses, data extraction and scripts. Fixed price up front, all the code is yours. Seven projects you can view live, with scores you can check yourself.">
 <link rel="canonical" href="https://marven151.github.io/en/">
 <link rel="alternate" hreflang="pl" href="https://marven151.github.io/">
 <link rel="alternate" hreflang="en" href="https://marven151.github.io/en/">
 <link rel="alternate" hreflang="x-default" href="https://marven151.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Marcin — websites for small businesses, from PLN 990">
-<meta property="og:description" content="Websites for local businesses, data scrapers and scripts. Fixed price up front, all the code is yours. Get an estimate in a minute.">
+<meta property="og:title" content="Marcin: websites for small businesses, from PLN 990">
+<meta property="og:description" content="Websites for small businesses, data extraction and scripts. Fixed price up front, all the code is yours. Seven projects you can view live, with scores you can check yourself.">
 <meta property="og:url" content="https://marven151.github.io/en/">
 <meta property="og:image" content="https://marven151.github.io/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin — strony i automatyzacje", "url": "https://marven151.github.io/", "email": "marcin.strony.www@gmail.com", "description": "Websites for local businesses, web data extraction and automation. Fixed price up front.", "areaServed": "PL", "priceRange": "od 150 zł", "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": ["en"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business website"}, "priceSpecification": {"@type": "PriceSpecification", "price": 990, "priceCurrency": "PLN", "minPrice": 990}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data extraction"}, "priceSpecification": {"@type": "PriceSpecification", "price": 350, "priceCurrency": "PLN", "minPrice": 350}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Script or automation"}, "priceSpecification": {"@type": "PriceSpecification", "price": 250, "priceCurrency": "PLN", "minPrice": 250}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website fixes"}, "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "PLN", "minPrice": 150}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin, strony i automatyzacje", "url": "https://marven151.github.io/", "email": "marcin.strony.www@gmail.com", "description": "Websites for small businesses, data extraction and automation. Fixed price up front.", "areaServed": "PL", "priceRange": "od 150 zł", "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": ["en"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business website"}, "priceSpecification": {"@type": "PriceSpecification", "price": 990, "priceCurrency": "PLN", "minPrice": 990}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data extraction"}, "priceSpecification": {"@type": "PriceSpecification", "price": 350, "priceCurrency": "PLN", "minPrice": 350}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Script or automation"}, "priceSpecification": {"@type": "PriceSpecification", "price": 250, "priceCurrency": "PLN", "minPrice": 250}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website fixes"}, "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "PLN", "minPrice": 150}}]}</script>
 <style>
 :root{
   --bg:#edccbe; --tone:#e3b9a8; --tone2:#d6a998; --ink:#351a2b; --muted:#6c4857; --ink2:#4a2a3e; --ink3:#241120;
@@ -66,7 +66,10 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .photo{position:sticky;top:12px;height:calc(100svh - 24px);overflow:hidden;background:var(--ink2)}
 .slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;gap:18px;padding:0 clamp(16px,3vw,48px);color:var(--bg);opacity:0}
 .slide:first-child{opacity:1}
-.slide img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+.slide .frm{background:var(--ink3)}
+.slide .frm .bar{height:32px;display:flex;align-items:center;padding:0 12px;font-size:13px;color:var(--bg)}
+.slide .frm .url{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.slide img{width:100%;height:auto;aspect-ratio:16/10;object-fit:contain;background:var(--ink2)}
 .slide figcaption{font-size:15px}
 
 /* work */
@@ -74,23 +77,43 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .work header{padding:0 var(--pad) 56px;display:flex;align-items:baseline;gap:32px;flex-wrap:wrap}
 .work h2{font-size:32px}
 .work header p{font-size:15px;color:var(--bg)}
-.folder{--n:0;position:sticky;top:calc(var(--n) * 64px);height:82svh;min-height:560px;background:var(--bg);color:var(--ink);margin-top:44px;padding:64px var(--pad) 40px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap);align-content:start}
+.folder{--n:0;position:sticky;top:calc(var(--n) * 64px);min-height:82svh;background:var(--bg);color:var(--ink);margin-top:44px;padding:64px var(--pad) 40px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap);align-content:start}
 .folder:nth-of-type(even){background:var(--tone)}
 .tabs{position:absolute;left:var(--pad);top:-44px;display:flex;gap:6px}
 .tab{height:44px;display:flex;align-items:center;padding:0 34px 0 24px;background:var(--ink3);color:var(--bg);clip-path:polygon(0 100%,0 14px,14px 0,calc(100% - 22px) 0,100% 100%)}
 .tab.n{font-family:var(--display);font-weight:500;font-size:26px;letter-spacing:-.01em}
 .tab.s{background:var(--ink2);font-size:15px}
 .folder .kind{position:absolute;right:var(--pad);top:18px;font-size:15px}
-.folder figure{grid-column:1/8;aspect-ratio:16/10;overflow:hidden;background:var(--ink2)}
-.folder figure img{width:100%;height:100%;object-fit:cover;object-position:50% 0}
-.folder .txt{grid-column:9/13;align-self:start}
-.folder .txt p{font-size:17px;line-height:1.55;max-width:46ch}
-.folder .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.dev{grid-column:1/9;align-self:start;background:var(--ink3);color:var(--bg)}
+.dev .bar{height:40px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 14px;font-size:14px}
+.dev .url{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--bg)}
+.dev .tg{display:flex;gap:6px;flex:none}
+.dev .tg button{min-height:28px;padding:0 12px;font-size:14px;background:var(--ink2);color:var(--bg);transition:background .2s,color .2s}
+.dev .tg button:hover{background:var(--ink)}
+.dev .tg button.on{background:var(--bg);color:var(--ink)}
+.dev .view{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--ink2)}
+.dev .view .poster{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 0;transition:opacity .4s}
+.dev .view iframe{position:absolute;left:0;top:0;border:0;background:#fff;transform-origin:0 0;opacity:0;transition:opacity .4s;pointer-events:none}
+.dev.loaded .view iframe{opacity:1}
+.dev.loaded .view .poster{opacity:0}
+.dev .view.act iframe{pointer-events:auto}
+.dev .view::after{content:attr(data-hint);position:absolute;right:12px;bottom:12px;padding:6px 12px;font-size:13px;background:var(--ink3);color:var(--bg);opacity:0;transition:opacity .2s;pointer-events:none}
+.dev.loaded .view:not(.act):hover::after{opacity:.92}
+.folder .txt{grid-column:9/13;align-self:start;padding-top:40px}
+.lh{margin-top:24px}
+.lh p{font-size:14px;color:var(--ink);margin-top:10px}
+.lh ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.lh li{background:var(--ink3);color:var(--bg);padding:8px 10px}
+.lh li b{display:block;font-family:var(--display);font-weight:500;font-size:1.75rem;line-height:1;font-variant-numeric:tabular-nums}
+.lh li span{font-size:13px}
+.lh a{text-underline-offset:4px}
+.folder .txt>p{font-size:17px;line-height:1.55;max-width:46ch}
+.folder .acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
 .folder .acts .btn{min-height:46px;padding:0 22px;font-size:15px}
 .folder .acts .btn.o{background:var(--tone2);color:var(--ink)}
 .folder .acts .btn.o:hover{background:var(--ink);color:var(--bg)}
-.folder .api{grid-column:1/8;aspect-ratio:16/10;background:var(--ink);color:var(--bg);padding:clamp(20px,3vw,48px);overflow:hidden}
-.folder .api pre{margin:0;font:15px/1.9 ui-monospace,Menlo,monospace;color:var(--bg)}
+.dev .view.api{background:var(--ink);padding:clamp(20px,3vw,48px)}
+.dev .view.api pre{margin:0;font:15px/1.9 ui-monospace,Menlo,monospace;color:var(--bg)}
 
 /* services */
 .offer{background:var(--bg);padding:clamp(96px,12vw,200px) var(--pad) clamp(180px,20vw,340px)}
@@ -152,7 +175,7 @@ details.bar .items{padding:6px 18px 20px}
 .slip .end{margin:36px -36px 0;padding:0 36px;min-height:56px;display:flex;align-items:center;background:var(--bg);color:var(--ink);font-weight:500}
 
 /* faq */
-.faq{background:var(--ink);color:var(--ink);padding:clamp(96px,12vw,200px) var(--pad)}
+.faq{background:var(--ink);color:var(--ink);padding:clamp(96px,12vw,200px) var(--pad);overflow-x:clip}
 .faq h2{color:var(--bg);font-size:clamp(2.5rem,4vw,4rem);max-width:1100px;margin:0 auto 72px}
 .cards{max-width:1100px;margin:0 auto}
 .cards details{--i:0;position:relative;background:var(--bg);margin-top:56px}
@@ -199,16 +222,19 @@ details.bar .items{padding:6px 18px 20px}
 /* motion */
 @media (prefers-reduced-motion:no-preference){
   .js .card>*:not(.stripe){opacity:0;animation:rise 900ms var(--ease) forwards}
-  .js .card .mark{animation-delay:150ms}.js .card h1{animation-delay:260ms}.js .card .lead{animation-delay:370ms}.js .card .btn{animation-delay:480ms}.js .card .links{animation-delay:600ms}
+  .js .card .mark,.js .card h1{opacity:1;animation:lift 900ms var(--ease) both}
+  .js .card .lead{animation-delay:370ms}.js .card .btn{animation-delay:480ms}.js .card .links{animation-delay:600ms}
+  @keyframes lift{from{transform:translateY(24px)}to{transform:none}}
   @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
   .slide{animation:xfade 28s infinite}
-  .slide:nth-child(1){animation-delay:0s}.slide:nth-child(2){animation-delay:7s}.slide:nth-child(3){animation-delay:14s}.slide:nth-child(4){animation-delay:21s}
+  .slide:nth-child(1){animation-name:xfade0}.slide:nth-child(2){animation-delay:7s}.slide:nth-child(3){animation-delay:14s}.slide:nth-child(4){animation-delay:21s}
+  @keyframes xfade0{0%{opacity:1}25%{opacity:1}31%{opacity:0}100%{opacity:0}}
   @keyframes xfade{0%{opacity:0;transform:translateY(16px)}6%{opacity:1;transform:none}25%{opacity:1}31%{opacity:0}100%{opacity:0}}
-  .slide:first-child{opacity:0}
   .js [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity 700ms var(--ease),transform 900ms var(--ease);transition-delay:calc(var(--d,0) * 70ms)}
   .js [data-reveal].is-in{opacity:1;transform:none}
 }
 
+@media (max-height:820px){.folder{position:relative;top:auto}}
 @media (max-width:900px){
   .hero{grid-template-columns:1fr;display:flex;flex-direction:column}
   .photo{order:-1;position:relative;top:0;height:48svh}
@@ -219,11 +245,12 @@ details.bar .items{padding:6px 18px 20px}
   .card .links{margin-top:32px}
   .stripe{height:40px}
   .work header{flex-direction:column;gap:8px}
-  .folder{position:relative;top:auto;height:auto;min-height:0;display:block;padding:40px 20px 28px;margin-top:48px}
+  .folder{position:relative;top:auto;min-height:0;display:block;padding:40px 20px 28px;margin-top:48px}
   .tabs{left:20px;top:-40px}.tab{height:40px;padding:0 26px 0 18px}.tab.n{font-size:20px}.tab.s{display:none}
   .folder .kind{position:static;display:block;margin-bottom:16px}
-  .folder figure,.folder .api{aspect-ratio:4/3}
+  .dev .tg button{min-height:32px}
   .folder .txt{padding-top:20px}
+  .lh ul{grid-template-columns:repeat(2,1fr)}
   .ticket{display:block;width:100%}
   .ticket .main{padding:32px 20px}
   .ticket .stub{border-left:0;border-top:6px dotted var(--ink);padding:32px 20px 0}
@@ -251,61 +278,82 @@ details.bar .items{padding:6px 18px 20px}
     <div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
     <p class="mark display">Marcin</p>
     <h1 class="display">A website from PLN 990.<br>Price up front.</h1>
-    <p class="lead">I build websites for local businesses, pull web data into spreadsheets and write scripts for the jobs you&#x27;re tired of doing by hand. You get all the code.</p>
+    <p class="lead">I&#x27;m Marcin. I build websites for small businesses, pull data into spreadsheets and write scripts for tedious jobs. You get all the code.</p>
     <a class="btn" href="#wycena">Get an estimate</a>
     <nav class="links" aria-label="Main">
-      <a href="#prace">Work</a><a href="#jak">How I work</a><a href="#pytania">Questions</a><a href="https://marven151.github.io/" hreflang="pl" lang="pl" aria-label="Wersja polska">PL</a>
+      <a href="#prace">Work</a><a href="#jak">How I work</a><a href="#pytania">Questions</a><a href="https://marven151.github.io/" hreflang="pl" lang="pl" aria-label="PL, Wersja polska">PL</a>
     </nav>
   </div>
-  <div class="photo" aria-hidden="true"><figure class="slide"><img src="../img/northside-bikes.jpg" alt="" width="1280" height="800"><figcaption>Northside Bikes · Website</figcaption></figure><figure class="slide"><img src="../img/sukcyna.jpg" alt="" width="1280" height="800" loading="lazy"><figcaption>Sukcyna · Website</figcaption></figure><figure class="slide"><img src="../img/gaski-apartament.jpg" alt="" width="1280" height="800" loading="lazy"><figcaption>Apartament Gąski · Website</figcaption></figure><figure class="slide"><img src="../img/book-scraper.jpg" alt="" width="1280" height="800" loading="lazy"><figcaption>Book scraper · Scraper</figcaption></figure></div>
+  <div class="photo" aria-hidden="true"><figure class="slide"><div class="frm"><div class="bar"><span class="url">marven151.github.io/northside-bikes/</span></div><img src="../img/northside-bikes.jpg" alt="" width="1280" height="800"></div><figcaption>Northside Bikes · Website</figcaption></figure><figure class="slide"><div class="frm"><div class="bar"><span class="url">marven151.github.io/sukcyna/</span></div><img src="../img/sukcyna.jpg" alt="" width="1280" height="800" loading="lazy"></div><figcaption>Sukcyna · Website</figcaption></figure><figure class="slide"><div class="frm"><div class="bar"><span class="url">marven151.github.io/gaski-apartament/</span></div><img src="../img/gaski-apartament.jpg" alt="" width="1280" height="800" loading="lazy"></div><figcaption>Apartament Gąski · Website</figcaption></figure><figure class="slide"><div class="frm"><div class="bar"><span class="url"></span></div><img src="../img/book-scraper.jpg" alt="" width="1280" height="800" loading="lazy"></div><figcaption>Book scraper · Scraper</figcaption></figure></div>
 </header>
 <main id="main">
 <section class="work" id="prace" aria-labelledby="h-work">
-  <header><h2 class="display" id="h-work">Work</h2><p>Seven projects, all with code on GitHub.</p></header>
+  <header><h2 class="display" id="h-work">Work</h2><p>Seven projects. Some of the businesses are made up and each project says so. All the code is on GitHub, and you can scroll the sites right here.</p></header>
   <article class="folder" id="p0" style="--n:0">
 <div class="tabs"><span class="tab n">Northside Bikes</span><span class="tab s">HTML · CSS · JS</span></div>
 <span class="kind">Website</span>
-<figure data-reveal><img src="../img/northside-bikes.jpg" alt="Northside Bikes landing page: headline, booking buttons and a repair ticket card" width="1280" height="800" loading="lazy"></figure>
-<div class="txt" data-reveal style="--d:2"><p>Landing page for a local bike repair shop (a fictional business). Price list with turnaround times, opening hours, a map and a booking form with validation. Works down to 360 px.</p><div class="acts"><a class="btn" href="https://marven151.github.io/northside-bikes/">View site</a><a class="btn o" href="https://github.com/Marven151/northside-bikes">Code</a></div></div>
+<div class="dev" data-src="https://marven151.github.io/northside-bikes/" data-reveal>
+<div class="bar"><span class="url">marven151.github.io/northside-bikes/</span><span class="tg"><button type="button" class="on" data-mode="d">Desktop</button><button type="button" data-mode="p">Phone</button></span></div>
+<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/northside-bikes.jpg" alt="Northside Bikes website: the words Fixed same day, a workshop photograph and a booking button" width="1280" height="800" loading="lazy"><iframe title="Northside Bikes" loading="lazy" tabindex="-1"></iframe></div>
+</div>
+<div class="txt" data-reveal style="--d:2"><p>An invented bike shop in Bristol. Most of the time went into the price list: click a job and the repair ticket beside it fills in with the price and the ready-by time. The booking form checks its fields but sends nothing, because it&#x27;s a demo.</p><div class="lh"><ul><li><b>85</b><span>performance</span></li><li><b>100</b><span>accessibility</span></li><li><b>100</b><span>practices</span></li><li><b>100</b><span>SEO</span></li></ul><p>Lighthouse on a phone. <a href="https://pagespeed.web.dev/analysis?url=https://marven151.github.io/northside-bikes/&form_factor=mobile">Check it yourself</a></p></div><div class="acts"><a class="btn" href="https://marven151.github.io/northside-bikes/">Open the site</a><a class="btn o" href="https://github.com/Marven151/northside-bikes">Code</a></div></div>
 </article><article class="folder" id="p1" style="--n:1">
 <div class="tabs"><span class="tab n">Book scraper</span><span class="tab s">Python · pytest</span></div>
 <span class="kind">Scraper</span>
-<figure data-reveal><img src="../img/book-scraper.jpg" alt="Terminal output of the book scraper and the resulting travel.csv with 11 books" width="1280" height="800" loading="lazy"></figure>
-<div class="txt" data-reveal style="--d:2"><p>A command-line scraper that turns a product catalogue into a clean spreadsheet. It follows categories and pagination, retries failed requests and pauses between them. Exports CSV, JSON or Excel. The parser is covered by tests.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/book-scraper">Code</a></div></div>
+<div class="dev" data-reveal>
+<div class="bar"><span class="url">python scrape.py --category travel --details</span></div>
+<div class="view"><img class="poster" src="../img/book-scraper.jpg" alt="Terminal output of the book scraper and the resulting travel.csv with 11 books" width="1280" height="800" loading="lazy"></div>
+</div>
+<div class="txt" data-reveal style="--d:2"><p>Pulls a book catalogue from a scraping-practice site and saves it as CSV, JSON or Excel. If the site doesn&#x27;t answer it tries again, and it pauses between requests so it doesn&#x27;t hammer the server. The parser has tests, so a change to the page layout won&#x27;t break it silently.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/book-scraper">Code</a></div></div>
 </article><article class="folder" id="p2" style="--n:2">
 <div class="tabs"><span class="tab n">Sheet merge</span><span class="tab s">Python · pandas</span></div>
 <span class="kind">Script</span>
-<figure data-reveal><img src="../img/sheet-merge.jpg" alt="Sheet-merge summary and the merged spreadsheet of 12 orders from 3 files" width="1280" height="800" loading="lazy"></figure>
-<div class="txt" data-reveal style="--d:2"><p>Merges messy exports from different shops into one clean file. Matches differently named columns, fixes dates and letter case, removes duplicates and adds a summary sheet of what changed.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/sheet-merge">Code</a></div></div>
+<div class="dev" data-reveal>
+<div class="bar"><span class="url">python sheet_merge.py orders/ --dayfirst shop_b_orders.xlsx</span></div>
+<div class="view"><img class="poster" src="../img/sheet-merge.jpg" alt="Sheet-merge summary and the merged spreadsheet of 12 orders from 3 files" width="1280" height="800" loading="lazy"></div>
+</div>
+<div class="txt" data-reveal style="--d:2"><p>Three shops, three different exports: other column names, stray spaces, duplicates. The script merges them into one sheet and adds a list of what it fixed. Dates written as 05/03 cause the most trouble, since nobody can tell May from March, so you can tell it which file writes the day first.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/sheet-merge">Code</a></div></div>
 </article><article class="folder" id="p3" style="--n:3">
 <div class="tabs"><span class="tab n">Sukcyna</span><span class="tab s">HTML · CSS · SVG</span></div>
 <span class="kind">Website</span>
-<figure data-reveal><img src="../img/sukcyna.jpg" alt="Landing page of an amber cosmetics brand: dark background and a glowing amber stone" width="1280" height="800" loading="lazy"></figure>
-<div class="txt" data-reveal style="--d:2"><p>Landing page for a fictional cosmetics brand built around Baltic amber. A hand-drawn SVG stone with a light that follows the cursor, a product catalogue and an ingredient table. Respects reduced-motion settings.</p><div class="acts"><a class="btn" href="https://marven151.github.io/sukcyna/">View site</a><a class="btn o" href="https://github.com/Marven151/sukcyna">Code</a></div></div>
+<div class="dev" data-src="https://marven151.github.io/sukcyna/" data-reveal>
+<div class="bar"><span class="url">marven151.github.io/sukcyna/</span><span class="tg"><button type="button" class="on" data-mode="d">Desktop</button><button type="button" data-mode="p">Phone</button></span></div>
+<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/sukcyna.jpg" alt="Landing page of an amber cosmetics brand: dark background and a glowing amber stone" width="1280" height="800" loading="lazy"><iframe title="Sukcyna" loading="lazy" tabindex="-1"></iframe></div>
+</div>
+<div class="txt" data-reveal style="--d:2"><p>An invented cosmetics brand built on Baltic amber. The whole dark page circles one object: an amber stone drawn in SVG, with light that follows the cursor. The photographs of the raw material are real and the product&#x27;s full ingredient list is shown.</p><div class="lh"><ul><li><b>100</b><span>performance</span></li><li><b>100</b><span>accessibility</span></li><li><b>100</b><span>practices</span></li><li><b>100</b><span>SEO</span></li></ul><p>Lighthouse on a phone. <a href="https://pagespeed.web.dev/analysis?url=https://marven151.github.io/sukcyna/&form_factor=mobile">Check it yourself</a></p></div><div class="acts"><a class="btn" href="https://marven151.github.io/sukcyna/">Open the site</a><a class="btn o" href="https://github.com/Marven151/sukcyna">Code</a></div></div>
 </article><article class="folder" id="p4" style="--n:4">
 <div class="tabs"><span class="tab n">Apartament Gąski</span><span class="tab s">HTML · CSS · JS</span></div>
 <span class="kind">Website</span>
-<figure data-reveal><img src="../img/gaski-apartament.jpg" alt="Holiday apartment website: headline 20 metres to the sea and beach photographs" width="1280" height="800" loading="lazy"></figure>
-<div class="txt" data-reveal style="--d:2"><p>Website for a seaside apartment with an availability calendar. Guests pick dates and send an enquiry with the dates filled in; the owner marks booked days in a file. Gallery, price list and a map with an approximate area.</p><div class="acts"><a class="btn" href="https://marven151.github.io/gaski-apartament/">View site</a><a class="btn o" href="https://github.com/Marven151/gaski-apartament">Code</a></div></div>
+<div class="dev" data-src="https://marven151.github.io/gaski-apartament/" data-reveal>
+<div class="bar"><span class="url">marven151.github.io/gaski-apartament/</span><span class="tg"><button type="button" class="on" data-mode="d">Desktop</button><button type="button" data-mode="p">Phone</button></span></div>
+<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/gaski-apartament.jpg" alt="Holiday apartment website: headline 20 metres to the sea and beach photographs" width="1280" height="800" loading="lazy"><iframe title="Apartament Gąski" loading="lazy" tabindex="-1"></iframe></div>
+</div>
+<div class="txt" data-reveal style="--d:2"><p>A seaside apartment with a booking calendar. Guests pick dates and get a ready-made e-mail with them filled in. The owner has no admin panel: they mark booked days on their side and upload a file. The prices in the demo are made up.</p><div class="lh"><ul><li><b>82</b><span>performance</span></li><li><b>100</b><span>accessibility</span></li><li><b>100</b><span>practices</span></li><li><b>100</b><span>SEO</span></li></ul><p>Lighthouse on a phone. <a href="https://pagespeed.web.dev/analysis?url=https://marven151.github.io/gaski-apartament/&form_factor=mobile">Check it yourself</a></p></div><div class="acts"><a class="btn" href="https://marven151.github.io/gaski-apartament/">Open the site</a><a class="btn o" href="https://github.com/Marven151/gaski-apartament">Code</a></div></div>
 </article><article class="folder" id="p5" style="--n:5">
 <div class="tabs"><span class="tab n">Bakery: before and after</span><span class="tab s">HTML · Lighthouse</span></div>
 <span class="kind">Fixes</span>
-<figure data-reveal><img src="../img/site-fix-demo.jpg" alt="A page comparing a broken and a repaired bakery website, with Lighthouse scores" width="1280" height="800" loading="lazy"></figure>
-<div class="txt" data-reveal style="--d:2"><p>A small-business site that was broken and the same site after the fixes: a layout that works on phones, photos down from 4.9 MB to 303 KB, a form that works, readable text. Performance 75 → 99, accessibility 45 → 100 (Lighthouse).</p><div class="acts"><a class="btn" href="https://marven151.github.io/site-fix-demo/">View site</a><a class="btn o" href="https://github.com/Marven151/site-fix-demo">Code</a></div></div>
+<div class="dev" data-src="https://marven151.github.io/site-fix-demo/" data-reveal>
+<div class="bar"><span class="url">marven151.github.io/site-fix-demo/</span><span class="tg"><button type="button" class="on" data-mode="d">Desktop</button><button type="button" data-mode="p">Phone</button></span></div>
+<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/site-fix-demo.jpg" alt="A page comparing a broken and a repaired bakery website, with Lighthouse scores" width="1280" height="800" loading="lazy"><iframe title="Bakery: before and after" loading="lazy" tabindex="-1"></iframe></div>
+</div>
+<div class="txt" data-reveal style="--d:2"><p>A small business site that was broken, and the same site after the fixes. Photos went from 4.9 MB to 303 KB, the layout works on a phone, the form does something and the Polish letters look right. Performance 75 → 99, accessibility 45 → 100 in Lighthouse.</p><div class="lh"><ul><li><b>92</b><span>performance</span></li><li><b>100</b><span>accessibility</span></li><li><b>100</b><span>practices</span></li><li><b>100</b><span>SEO</span></li></ul><p>Lighthouse on a phone. <a href="https://pagespeed.web.dev/analysis?url=https://marven151.github.io/site-fix-demo/&form_factor=mobile">Check it yourself</a></p></div><div class="acts"><a class="btn" href="https://marven151.github.io/site-fix-demo/">Open the site</a><a class="btn o" href="https://github.com/Marven151/site-fix-demo">Code</a></div></div>
 </article><article class="folder" id="p6" style="--n:6">
 <div class="tabs"><span class="tab n">StudyBuddy</span><span class="tab s">React Native · Node</span></div>
 <span class="kind">App</span>
-<div class="api" data-ui data-reveal><pre><code>POST   /api/auth/register
+<div class="dev" data-ui data-reveal>
+<div class="bar"><span class="url">api · Express + MongoDB</span></div>
+<div class="view api"><pre><code>POST   /api/auth/register
 POST   /api/auth/login
 GET    /api/tasks
 PATCH  /api/tasks/:id
 GET    /api/notes
 GET    /api/stats/summary</code></pre></div>
-<div class="txt" data-reveal style="--d:2"><p>A mobile app for students with its own backend: tasks with tags and priorities, notes, stats and a daily streak. JWT login, an Express API on MongoDB.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/StudyBuddy">Code</a></div></div>
+</div>
+<div class="txt" data-reveal style="--d:2"><p>A mobile app for students with its own server: tasks, notes and stats. JWT login, data in MongoDB. There&#x27;s no version to click through, so what&#x27;s left is the code and the list of endpoints.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/StudyBuddy">Code</a></div></div>
 </article>
 </section>
 <section class="offer" aria-label="What I do">
-  <div class="col"><h2 class="giant" data-reveal style="font-size:20.0cqw">Services</h2><details class="bar" open data-reveal style="--d:0"><summary><span>Websites for businesses</span><span class="p">from PLN 990</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>One-page site</span><span>offer, hours, map, form</span></div><div class="it"><span>Phone</span><span>built for small screens</span></div><div class="it"><span>Hosting</span><span>free, e.g. GitHub Pages or Netlify</span></div><div class="it"><span>Code</span><span>all of it is yours</span></div><div class="it ex"><span>Example</span><span><a href="#p0">Northside Bikes</a>, <a href="#p3">Sukcyna</a>, <a href="#p4">Apartament Gąski</a></span></div></div></details><details class="bar" data-reveal style="--d:1"><summary><span>Data extraction</span><span class="p">from PLN 350</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Prices, listings, catalogues</span><span>from public websites</span></div><div class="it"><span>File</span><span>CSV, Excel or JSON</span></div><div class="it"><span>Script</span><span>so you can run it again yourself</span></div><div class="it ex"><span>Example</span><span><a href="#p1">Book scraper</a></span></div></div></details><details class="bar" data-reveal style="--d:2"><summary><span>Scripts and automation</span><span class="p">from PLN 250</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Files</span><span>renaming, converting, sorting</span></div><div class="it"><span>Spreadsheets</span><span>merging and cleaning data</span></div><div class="it"><span>Reports</span><span>scheduled, sent by e-mail</span></div><div class="it ex"><span>Example</span><span><a href="#p2">Sheet merge</a></span></div></div></details><details class="bar" data-reveal style="--d:3"><summary><span>Fixes to an existing site</span><span class="p">from PLN 150</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Layout</span><span>fixed on mobile</span></div><div class="it"><span>Form</span><span>that doesn&#x27;t send</span></div><div class="it"><span>Speed</span><span>a page that loads slowly</span></div><div class="it ex"><span>Example</span><span><a href="#p5">Bakery: before and after</a></span></div></div></details></div>
+  <div class="col"><h2 class="giant" data-reveal style="font-size:20.0cqw">Services</h2><details class="bar" open data-reveal style="--d:0"><summary><span>Websites for businesses</span><span class="p">from PLN 990</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>One page</span><span>offer, hours, map, form</span></div><div class="it"><span>On a phone</span><span>works the same as on a computer</span></div><div class="it"><span>Hosting</span><span>free, e.g. GitHub Pages</span></div><div class="it"><span>Code</span><span>you get all of it</span></div><div class="it ex"><span>Example</span><span><a href="#p0">Northside Bikes</a>, <a href="#p3">Sukcyna</a>, <a href="#p4">Apartament Gąski</a></span></div></div></details><details class="bar" data-reveal style="--d:1"><summary><span>Data extraction</span><span class="p">from PLN 350</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>From what</span><span>prices, listings, catalogues on public sites</span></div><div class="it"><span>Into what</span><span>a CSV, Excel or JSON file</span></div><div class="it"><span>Script</span><span>you can run it yourself whenever you want</span></div><div class="it ex"><span>Example</span><span><a href="#p1">Book scraper</a></span></div></div></details><details class="bar" data-reveal style="--d:2"><summary><span>Scripts and automation</span><span class="p">from PLN 250</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Files</span><span>renaming, converting, sorting</span></div><div class="it"><span>Spreadsheets</span><span>merging and cleaning data</span></div><div class="it"><span>Reports</span><span>e-mailed every week</span></div><div class="it ex"><span>Example</span><span><a href="#p2">Sheet merge</a></span></div></div></details><details class="bar" data-reveal style="--d:3"><summary><span>Fixes to an existing site</span><span class="p">from PLN 150</span><span class="pl" aria-hidden="true">+</span></summary><div class="items"><div class="it"><span>Layout</span><span>fixed on mobile</span></div><div class="it"><span>Form</span><span>that sends nothing</span></div><div class="it"><span>Speed</span><span>a page that loads slowly</span></div><div class="it ex"><span>Example</span><span><a href="#p5">Bakery: before and after</a></span></div></div></details></div>
 </section>
 <section class="quote" id="wycena" aria-labelledby="h-quote">
   <div class="ticket" data-reveal>
@@ -324,17 +372,17 @@ GET    /api/stats/summary</code></pre></div>
   </div>
 </section>
 <section class="how" id="jak" aria-labelledby="h-how">
-  <div class="hd" data-reveal><h2 class="display" id="h-how">How it works</h2><p>No forty-page contracts. You write, you get a price and a date, then I get to work.</p></div>
-  <div class="slip" data-reveal style="--d:2"><h3>At the start</h3><div class="r"><span>You describe what you need</span><i></i><span>e-mail</span></div><div class="r"><span>You get a price and a date</span><i></i><span>up front</span></div><h3>Along the way</h3><div class="r"><span>I show progress</span><i></i><span>as it goes</span></div><div class="r"><span>Changes after your notes</span><i></i><span>included</span></div><div class="end">At the end you get finished files and all the code</div></div>
+  <div class="hd" data-reveal><h2 class="display" id="h-how">How it works</h2><p>You write, you get a price and a date, then I get to work.</p></div>
+  <div class="slip" data-reveal style="--d:2"><h3>At the start</h3><div class="r"><span>You describe what you need</span><i></i><span>e-mail</span></div><div class="r"><span>You get a price and a date</span><i></i><span>up front</span></div><h3>Along the way</h3><div class="r"><span>I show progress</span><i></i><span>as it goes</span></div><div class="r"><span>Changes after your notes</span><i></i><span>included</span></div><div class="end">At the end you have the finished files and all the code</div></div>
 </section>
 <section class="faq" id="pytania" aria-labelledby="h-faq">
   <h2 class="display" id="h-faq">Questions</h2>
-  <div class="cards"><details data-tab="Price" style="--i:0" open data-reveal><summary>What does it really cost?</summary><p>The figures in the estimate are starting prices for small projects. You get the exact price by e-mail before I start anything, and it doesn&#x27;t change if the scope stays the same.</p></details><details data-tab="Code" style="--i:1" data-reveal><summary>Is the code mine?</summary><p>Yes. You get every file and the full source. The site doesn&#x27;t depend on me, you can hand changes to anyone.</p></details><details data-tab="Hosting" style="--i:2" data-reveal><summary>Where will my site live?</summary><p>By default on free hosting (GitHub Pages or Netlify). If you already have hosting or a domain, I help connect it.</p></details><details data-tab="Changes" style="--i:3" data-reveal><summary>What if something needs changing after delivery?</summary><p>Small fixes after delivery are included. Bigger changes I quote separately, also up front.</p></details><details data-tab="Data" style="--i:4" data-reveal><summary>Is scraping legal?</summary><p>I only collect publicly available information and never bypass protections. If something looks doubtful, I tell you straight away.</p></details></div>
+  <div class="cards"><details data-tab="Clients" style="--i:0" open data-reveal><summary>Do you have clients yet?</summary><p>Not yet. I built every project above for myself, so I price the first jobs carefully and show progress as I go, so you&#x27;re not buying a pig in a poke.</p></details><details data-tab="Price" style="--i:1" data-reveal><summary>What does it really cost?</summary><p>The figures in the estimate are starting prices for small projects. I give the exact price by e-mail before I start, and it doesn&#x27;t change while the scope stays the same.</p></details><details data-tab="Code" style="--i:2" data-reveal><summary>Whose is the code?</summary><p>Yours. You get every file. The site doesn&#x27;t depend on me, anyone can make the next changes.</p></details><details data-tab="Hosting" style="--i:3" data-reveal><summary>Where will the site live?</summary><p>On free hosting by default, e.g. GitHub Pages or Netlify. If you already have hosting or a domain, I&#x27;ll help connect it.</p></details><details data-tab="Changes" style="--i:4" data-reveal><summary>And if something needs changing after delivery?</summary><p>Small fixes are included. Bigger changes I quote separately, also up front.</p></details><details data-tab="Data" style="--i:5" data-reveal><summary>Is scraping legal?</summary><p>I only take what anyone can see on a public page and I don&#x27;t get around protections. If something looks doubtful I&#x27;ll say so straight away.</p></details></div>
 </section>
 <section class="contact" id="kontakt" aria-labelledby="h-contact">
   <div class="coupon" data-reveal>
-    <div class="l"><h2 class="display" id="h-contact">Tell me how I can help</h2><p>A few sentences are enough. I reply by e-mail with a price and a date.</p></div>
-    <form id="contactForm" action="mailto:marcin.strony.www@gmail.com" method="post" enctype="text/plain">
+    <div class="l"><h2 class="display" id="h-contact">Tell me what you need</h2><p>A few sentences are enough. I reply by e-mail with a price and a date.</p></div>
+    <form id="contactForm">
       <label class="sr" for="f1">Name</label><input id="f1" name="name" placeholder="Name" autocomplete="name" required>
       <label class="sr" for="f2">Your e-mail</label><input id="f2" name="mail" type="email" placeholder="Your e-mail" autocomplete="email" required>
       <label class="sr" for="f3">What you need</label><textarea id="f3" name="msg" placeholder="What you need" required></textarea>
@@ -375,6 +423,23 @@ function renderQuote(){
 }
 svcBox.querySelectorAll('input').forEach(i=>i.addEventListener('change',renderQuote));
 renderQuote();
+const W={d:[1280,800],p:[390,800]};
+function fit(dev){
+  const v=dev.querySelector('.view'),f=dev.querySelector('iframe');if(!f)return;
+  const mode=dev.dataset.mode||'d',[w,h]=W[mode],vw=v.clientWidth,vh=v.clientHeight;
+  const s=mode==='d'?vw/w:vh/h;
+  f.style.width=w+'px';f.style.height=h+'px';f.style.transform='scale('+s+')';
+  f.style.left=mode==='d'?'0':Math.max(0,(vw-w*s)/2)+'px';
+}
+const devs=document.querySelectorAll('.dev[data-src]');
+const ro='ResizeObserver' in window?new ResizeObserver(es=>es.forEach(e=>fit(e.target.closest('.dev')))):null;
+const lo='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const d=e.target,f=d.querySelector('iframe');lo.unobserve(d);f.addEventListener('load',()=>d.classList.add('loaded'));f.src=d.dataset.src;fit(d)}),{rootMargin:'600px 0px'}):null;
+devs.forEach(d=>{
+  if(innerWidth<900){d.dataset.mode='p';d.querySelectorAll('.tg button').forEach(x=>x.classList.toggle('on',x.dataset.mode==='p'))}
+  if(ro)ro.observe(d.querySelector('.view'));if(lo)lo.observe(d);
+  d.querySelectorAll('.tg button').forEach(bt=>bt.addEventListener('click',()=>{d.dataset.mode=bt.dataset.mode;d.querySelectorAll('.tg button').forEach(x=>x.classList.toggle('on',x===bt));fit(d)}));
+  const v=d.querySelector('.view');v.addEventListener('click',()=>v.classList.add('act'));v.addEventListener('mouseleave',()=>v.classList.remove('act'));
+});
 const form=$('#contactForm');
 form.addEventListener('submit',e=>{
   e.preventDefault();
