@@ -21,7 +21,8 @@
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet"></noscript>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin, strony i automatyzacje", "url": "https://marven151.github.io/", "email": "marcin.strony.www@gmail.com", "description": "Websites for small businesses, data extraction and automation. Fixed price up front.", "areaServed": "PL", "priceRange": "od 150 zł", "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": ["en"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business website"}, "priceSpecification": {"@type": "PriceSpecification", "price": 990, "priceCurrency": "PLN", "minPrice": 990}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data extraction"}, "priceSpecification": {"@type": "PriceSpecification", "price": 350, "priceCurrency": "PLN", "minPrice": 350}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Script or automation"}, "priceSpecification": {"@type": "PriceSpecification", "price": 250, "priceCurrency": "PLN", "minPrice": 250}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website fixes"}, "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "PLN", "minPrice": 150}}]}</script>
 <style>
 :root{
@@ -158,6 +159,9 @@ details.bar .items{padding:6px 18px 20px}
 .stub .price small{font-family:var(--text);font-weight:400;font-size:1rem;letter-spacing:0;margin-right:10px}
 .stub .price{font-family:var(--display);font-weight:500;font-size:clamp(2.75rem,6vw,5.5rem);line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
 .stub .cur{font-size:1.25rem;margin-top:6px}
+.fb{font-size:14px;margin:12px 0 0;word-break:break-word}
+.stub .fb{margin:14px 0 18px;color:var(--muted)}
+.coupon .fb{color:var(--bg)}
 .stub .note{font-size:15px;margin:22px 0 28px;color:var(--muted)}
 .stub .btn{margin:auto -28px 0;min-height:60px;width:calc(100% + 56px);background:var(--ink2)}
 .stub .btn:hover{background:var(--ink3)}
@@ -284,7 +288,7 @@ details.bar .items{padding:6px 18px 20px}
       <a href="#prace">Work</a><a href="#jak">How I work</a><a href="#pytania">Questions</a><a href="https://marven151.github.io/" hreflang="pl" lang="pl" aria-label="PL, Wersja polska">PL</a>
     </nav>
   </div>
-  <div class="photo" aria-hidden="true"><figure class="slide"><div class="frm"><div class="bar"><span class="url">marven151.github.io/northside-bikes/</span></div><img src="../img/northside-bikes.jpg" alt="" width="1280" height="800"></div><figcaption>Northside Bikes · Website</figcaption></figure><figure class="slide"><div class="frm"><div class="bar"><span class="url">marven151.github.io/sukcyna/</span></div><img src="../img/sukcyna.jpg" alt="" width="1280" height="800" loading="lazy"></div><figcaption>Sukcyna · Website</figcaption></figure><figure class="slide"><div class="frm"><div class="bar"><span class="url">marven151.github.io/gaski-apartament/</span></div><img src="../img/gaski-apartament.jpg" alt="" width="1280" height="800" loading="lazy"></div><figcaption>Apartament Gąski · Website</figcaption></figure><figure class="slide"><div class="frm"><div class="bar"><span class="url"></span></div><img src="../img/book-scraper.jpg" alt="" width="1280" height="800" loading="lazy"></div><figcaption>Book scraper · Scraper</figcaption></figure></div>
+  <div class="photo" aria-hidden="true"><figure class="slide"><div class="frm"><div class="bar"><span class="url">marven151.github.io/northside-bikes/</span></div><img src="../img/northside-bikes.webp" alt="" width="1280" height="800"></div><figcaption>Northside Bikes · Website</figcaption></figure><figure class="slide"><div class="frm"><div class="bar"><span class="url">marven151.github.io/sukcyna/</span></div><img src="../img/sukcyna.webp" alt="" width="1280" height="800" loading="lazy"></div><figcaption>Sukcyna · Website</figcaption></figure><figure class="slide"><div class="frm"><div class="bar"><span class="url">marven151.github.io/gaski-apartament/</span></div><img src="../img/gaski-apartament.webp" alt="" width="1280" height="800" loading="lazy"></div><figcaption>Apartament Gąski · Website</figcaption></figure><figure class="slide"><div class="frm"><div class="bar"><span class="url"></span></div><img src="../img/book-scraper.webp" alt="" width="1280" height="800" loading="lazy"></div><figcaption>Book scraper · Scraper</figcaption></figure></div>
 </header>
 <main id="main">
 <section class="work" id="prace" aria-labelledby="h-work">
@@ -294,7 +298,7 @@ details.bar .items{padding:6px 18px 20px}
 <span class="kind">Website</span>
 <div class="dev" data-src="https://marven151.github.io/northside-bikes/" data-reveal>
 <div class="bar"><span class="url">marven151.github.io/northside-bikes/</span><span class="tg"><button type="button" class="on" data-mode="d">Desktop</button><button type="button" data-mode="p">Phone</button></span></div>
-<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/northside-bikes.jpg" alt="Northside Bikes website: the words Fixed same day, a workshop photograph and a booking button" width="1280" height="800" loading="lazy"><iframe title="Northside Bikes" loading="lazy" tabindex="-1"></iframe></div>
+<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/northside-bikes.webp" alt="Northside Bikes website: the words Fixed same day, a workshop photograph and a booking button" width="1280" height="800" loading="lazy"><iframe title="Northside Bikes" loading="lazy" tabindex="-1"></iframe></div>
 </div>
 <div class="txt" data-reveal style="--d:2"><p>An invented bike shop in Bristol. Most of the time went into the price list: click a job and the repair ticket beside it fills in with the price and the ready-by time. The booking form checks its fields but sends nothing, because it&#x27;s a demo.</p><div class="lh"><ul><li><b>85</b><span>performance</span></li><li><b>100</b><span>accessibility</span></li><li><b>100</b><span>practices</span></li><li><b>100</b><span>SEO</span></li></ul><p>Lighthouse on a phone. <a href="https://pagespeed.web.dev/analysis?url=https://marven151.github.io/northside-bikes/&form_factor=mobile">Check it yourself</a></p></div><div class="acts"><a class="btn" href="https://marven151.github.io/northside-bikes/">Open the site</a><a class="btn o" href="https://github.com/Marven151/northside-bikes">Code</a></div></div>
 </article><article class="folder" id="p1" style="--n:1">
@@ -302,7 +306,7 @@ details.bar .items{padding:6px 18px 20px}
 <span class="kind">Scraper</span>
 <div class="dev" data-reveal>
 <div class="bar"><span class="url">python scrape.py --category travel --details</span></div>
-<div class="view"><img class="poster" src="../img/book-scraper.jpg" alt="Terminal output of the book scraper and the resulting travel.csv with 11 books" width="1280" height="800" loading="lazy"></div>
+<div class="view"><img class="poster" src="../img/book-scraper.webp" alt="Terminal output of the book scraper and the resulting travel.csv with 11 books" width="1280" height="800" loading="lazy"></div>
 </div>
 <div class="txt" data-reveal style="--d:2"><p>Pulls a book catalogue from a scraping-practice site and saves it as CSV, JSON or Excel. If the site doesn&#x27;t answer it tries again, and it pauses between requests so it doesn&#x27;t hammer the server. The parser has tests, so a change to the page layout won&#x27;t break it silently.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/book-scraper">Code</a></div></div>
 </article><article class="folder" id="p2" style="--n:2">
@@ -310,7 +314,7 @@ details.bar .items{padding:6px 18px 20px}
 <span class="kind">Script</span>
 <div class="dev" data-reveal>
 <div class="bar"><span class="url">python sheet_merge.py orders/ --dayfirst shop_b_orders.xlsx</span></div>
-<div class="view"><img class="poster" src="../img/sheet-merge.jpg" alt="Sheet-merge summary and the merged spreadsheet of 12 orders from 3 files" width="1280" height="800" loading="lazy"></div>
+<div class="view"><img class="poster" src="../img/sheet-merge.webp" alt="Sheet-merge summary and the merged spreadsheet of 12 orders from 3 files" width="1280" height="800" loading="lazy"></div>
 </div>
 <div class="txt" data-reveal style="--d:2"><p>Three shops, three different exports: other column names, stray spaces, duplicates. The script merges them into one sheet and adds a list of what it fixed. Dates written as 05/03 cause the most trouble, since nobody can tell May from March, so you can tell it which file writes the day first.</p><div class="acts"><a class="btn " href="https://github.com/Marven151/sheet-merge">Code</a></div></div>
 </article><article class="folder" id="p3" style="--n:3">
@@ -318,7 +322,7 @@ details.bar .items{padding:6px 18px 20px}
 <span class="kind">Website</span>
 <div class="dev" data-src="https://marven151.github.io/sukcyna/" data-reveal>
 <div class="bar"><span class="url">marven151.github.io/sukcyna/</span><span class="tg"><button type="button" class="on" data-mode="d">Desktop</button><button type="button" data-mode="p">Phone</button></span></div>
-<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/sukcyna.jpg" alt="Landing page of an amber cosmetics brand: dark background and a glowing amber stone" width="1280" height="800" loading="lazy"><iframe title="Sukcyna" loading="lazy" tabindex="-1"></iframe></div>
+<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/sukcyna.webp" alt="Landing page of an amber cosmetics brand: dark background and a glowing amber stone" width="1280" height="800" loading="lazy"><iframe title="Sukcyna" loading="lazy" tabindex="-1"></iframe></div>
 </div>
 <div class="txt" data-reveal style="--d:2"><p>An invented cosmetics brand built on Baltic amber. The whole dark page circles one object: an amber stone drawn in SVG, with light that follows the cursor. The photographs of the raw material are real and the product&#x27;s full ingredient list is shown.</p><div class="lh"><ul><li><b>100</b><span>performance</span></li><li><b>100</b><span>accessibility</span></li><li><b>100</b><span>practices</span></li><li><b>100</b><span>SEO</span></li></ul><p>Lighthouse on a phone. <a href="https://pagespeed.web.dev/analysis?url=https://marven151.github.io/sukcyna/&form_factor=mobile">Check it yourself</a></p></div><div class="acts"><a class="btn" href="https://marven151.github.io/sukcyna/">Open the site</a><a class="btn o" href="https://github.com/Marven151/sukcyna">Code</a></div></div>
 </article><article class="folder" id="p4" style="--n:4">
@@ -326,7 +330,7 @@ details.bar .items{padding:6px 18px 20px}
 <span class="kind">Website</span>
 <div class="dev" data-src="https://marven151.github.io/gaski-apartament/" data-reveal>
 <div class="bar"><span class="url">marven151.github.io/gaski-apartament/</span><span class="tg"><button type="button" class="on" data-mode="d">Desktop</button><button type="button" data-mode="p">Phone</button></span></div>
-<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/gaski-apartament.jpg" alt="Holiday apartment website: headline 20 metres to the sea and beach photographs" width="1280" height="800" loading="lazy"><iframe title="Apartament Gąski" loading="lazy" tabindex="-1"></iframe></div>
+<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/gaski-apartament.webp" alt="Holiday apartment website: headline 20 metres to the sea and beach photographs" width="1280" height="800" loading="lazy"><iframe title="Apartament Gąski" loading="lazy" tabindex="-1"></iframe></div>
 </div>
 <div class="txt" data-reveal style="--d:2"><p>The website of a real seaside apartment, with a booking calendar. Guests pick dates and get a ready-made e-mail with them filled in. The owner has no admin panel: they mark booked days on their side and upload an availability file. The exact address is given only after a booking is confirmed.</p><div class="lh"><ul><li><b>82</b><span>performance</span></li><li><b>100</b><span>accessibility</span></li><li><b>100</b><span>practices</span></li><li><b>100</b><span>SEO</span></li></ul><p>Lighthouse on a phone. <a href="https://pagespeed.web.dev/analysis?url=https://marven151.github.io/gaski-apartament/&form_factor=mobile">Check it yourself</a></p></div><div class="acts"><a class="btn" href="https://marven151.github.io/gaski-apartament/">Open the site</a><a class="btn o" href="https://github.com/Marven151/gaski-apartament">Code</a></div></div>
 </article><article class="folder" id="p5" style="--n:5">
@@ -334,9 +338,9 @@ details.bar .items{padding:6px 18px 20px}
 <span class="kind">Fixes</span>
 <div class="dev" data-src="https://marven151.github.io/site-fix-demo/" data-reveal>
 <div class="bar"><span class="url">marven151.github.io/site-fix-demo/</span><span class="tg"><button type="button" class="on" data-mode="d">Desktop</button><button type="button" data-mode="p">Phone</button></span></div>
-<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/site-fix-demo.jpg" alt="A page comparing a broken and a repaired bakery website, with Lighthouse scores" width="1280" height="800" loading="lazy"><iframe title="Bakery: before and after" loading="lazy" tabindex="-1"></iframe></div>
+<div class="view" data-hint="Click the preview to scroll it"><img class="poster" src="../img/site-fix-demo.webp" alt="A page comparing a broken and a repaired bakery website, with Lighthouse scores" width="1280" height="800" loading="lazy"><iframe title="Bakery: before and after" loading="lazy" tabindex="-1"></iframe></div>
 </div>
-<div class="txt" data-reveal style="--d:2"><p>A small business site that was broken, and the same site after the fixes. Photos went from 4.9 MB to 303 KB, the layout works on a phone, the form does something and the Polish letters look right. Performance 75 → 99, accessibility 45 → 100 in Lighthouse.</p><div class="lh"><ul><li><b>92</b><span>performance</span></li><li><b>100</b><span>accessibility</span></li><li><b>100</b><span>practices</span></li><li><b>100</b><span>SEO</span></li></ul><p>Lighthouse on a phone. <a href="https://pagespeed.web.dev/analysis?url=https://marven151.github.io/site-fix-demo/&form_factor=mobile">Check it yourself</a></p></div><div class="acts"><a class="btn" href="https://marven151.github.io/site-fix-demo/">Open the site</a><a class="btn o" href="https://github.com/Marven151/site-fix-demo">Code</a></div></div>
+<div class="txt" data-reveal style="--d:2"><p>A small business site that was broken, and the same site after the fixes. Photos went from 4.9 MB to 303 KB, the layout works on a phone, the form does something and the Polish letters look right. Performance 75 → 92–100, accessibility 45 → 100 in Lighthouse.</p><div class="lh"><ul><li><b>92</b><span>performance</span></li><li><b>100</b><span>accessibility</span></li><li><b>100</b><span>practices</span></li><li><b>100</b><span>SEO</span></li></ul><p>Lighthouse on a phone. <a href="https://pagespeed.web.dev/analysis?url=https://marven151.github.io/site-fix-demo/&form_factor=mobile">Check it yourself</a></p></div><div class="acts"><a class="btn" href="https://marven151.github.io/site-fix-demo/">Open the site</a><a class="btn o" href="https://github.com/Marven151/site-fix-demo">Code</a></div></div>
 </article><article class="folder" id="p6" style="--n:6">
 <div class="tabs"><span class="tab n">StudyBuddy</span><span class="tab s">React Native · Node</span></div>
 <span class="kind">App</span>
@@ -368,6 +372,7 @@ GET    /api/stats/summary</code></pre></div>
       <p class="cur">PLN</p>
       <p class="note">Approximate. You get the final price by e-mail before I start.</p>
       <a class="btn" id="send" href="mailto:marcin.strony.www@gmail.com">Send enquiry</a>
+      <p class="fb">Your mail program will open. If nothing happens, write to <a href="mailto:marcin.strony.www@gmail.com">marcin.strony.www@gmail.com</a></p>
     </div>
   </div>
 </section>
@@ -387,6 +392,7 @@ GET    /api/stats/summary</code></pre></div>
       <label class="sr" for="f2">Your e-mail</label><input id="f2" name="mail" type="email" placeholder="Your e-mail" autocomplete="email" required>
       <label class="sr" for="f3">What you need</label><textarea id="f3" name="msg" placeholder="What you need" required></textarea>
       <button class="btn" type="submit">Send message</button>
+      <p class="fb">Your mail program will open. If nothing happens, write to <a href="mailto:marcin.strony.www@gmail.com">marcin.strony.www@gmail.com</a></p>
     </form>
   </div>
 </section>
