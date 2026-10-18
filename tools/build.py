@@ -166,7 +166,6 @@ details.bar .items{padding:6px 18px 20px}
 .cta{margin-top:40px;font-size:1.0625rem;max-width:46ch}
 .cta a{text-underline-offset:4px}
 .tel{margin-top:20px;font-size:1.25rem}
-.tel a{text-underline-offset:4px}
 /* faq */
 .faq{background:var(--ink);color:var(--ink);padding:clamp(96px,12vw,200px) var(--pad);overflow-x:clip}
 .faq h2{color:var(--bg);font-size:clamp(2.5rem,4vw,4rem);max-width:1100px;margin:0 auto 72px}
@@ -400,7 +399,7 @@ def page(T, prefix):
         priceLabel=T["q_body_price"], cur=T["q_cur"], outro=T["q_body_outro"], fsubject=T["f_subject"], fbody=T["f_body"])
     ld = {
         "@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin Świerczyński, strony i automatyzacje",
-        "url": SITE, "email": MAIL, "telephone": T["phone_tel"], "founder": {"@type": "Person", "name": T["full_name"]}, "description": T["jsonld_desc"], "areaServed": "PL", "priceRange": "od 150 zł",
+        "url": SITE, "email": MAIL, "founder": {"@type": "Person", "name": T["full_name"]}, "description": T["jsonld_desc"], "areaServed": "PL", "priceRange": "od 150 zł",
         "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": [T["lang"]],
         "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s["label"]}, "priceSpecification": {"@type": "PriceSpecification", "price": s["base"], "priceCurrency": "PLN", "minPrice": s["base"]}} for s in T["q_services"]],
     }
@@ -487,7 +486,7 @@ def page(T, prefix):
 </section>
 <section class="contact" id="kontakt" aria-labelledby="h-contact">
   <div class="coupon" data-reveal>
-    <div class="l"><h2 class="display" id="h-contact">{T["contact_h"]}</h2><p>{T["contact_p"]}</p><p class="tel"><a href="tel:{T["phone_tel"]}">{T["phone"]}</a></p></div>
+    <div class="l"><h2 class="display" id="h-contact">{T["contact_h"]}</h2><p>{T["contact_p"]}</p><p class="tel">{T["call_note"]}</p></div>
     <form id="contactForm">
       <label class="sr" for="f1">{T["f_name"]}</label><input id="f1" name="name" placeholder="{T["f_name"]}" autocomplete="name" required>
       <label class="sr" for="f2">{T["f_mail"]}</label><input id="f2" name="mail" type="email" placeholder="{T["f_mail"]}" autocomplete="email" required>
@@ -502,7 +501,7 @@ def page(T, prefix):
   <div class="back">
     <div class="stamp" aria-hidden="true"><img src="{prefix}img/sukcyna.jpg" alt="" width="1280" height="800" loading="lazy"></div>
     <div><h2 class="display">{T["foot_h"]}</h2><p class="msg">{T["foot_p"]}</p></div>
-    <address><a href="mailto:{MAIL}">{MAIL}</a><a href="tel:{T["phone_tel"]}">{T["phone"]}</a><a href="https://github.com/Marven151">{T["foot_gh"]}</a></address>
+    <address><a href="mailto:{MAIL}">{MAIL}</a><a href="https://github.com/Marven151">{T["foot_gh"]}</a></address>
     <p class="imp">{T["foot_imprint"].format(year=year)} · <a href="{SITE}informacja/">{T["info_link"]}</a></p>
   </div>
 </footer>

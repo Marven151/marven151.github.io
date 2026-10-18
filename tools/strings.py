@@ -9,7 +9,7 @@ PL = dict(
  nav_work="Prace", nav_how="Jak pracuję", nav_faq="Pytania", nav_aria="Główne",
  h1a="Strona od 990 zł.", h1b="Cena z góry.",
  lead="Jestem Marcin Świerczyński. Robię strony dla małych firm, pobieram dane do arkuszy i piszę skrypty do żmudnych zadań. Cały kod jest twój.",
- phone="736 645 005", phone_tel="+48736645005", full_name="Marcin Świerczyński",
+ full_name="Marcin Świerczyński", call_note="Wolisz porozmawiać? Napisz, a umówimy termin rozmowy.",
  rules_h="Zasady współpracy",
  rules=[
   ("W cenie od 990 zł","Jedna strona z kilkoma sekcjami, dopasowana do telefonu, z publikacją i dwiema rundami poprawek. Formularz, mapa, kalendarz, wersja angielska i pomoc z domeną to dodatki z kalkulatora."),
@@ -191,7 +191,7 @@ EN.update(
   ("Changes","And if something needs changing after delivery?","Small fixes are included. Bigger changes I quote separately, also up front."),
   ("Data","Is scraping legal?","I only take what anyone can see on a public page and I don't get around protections. If something looks doubtful I'll say so straight away."),
  ],
- contact_h="Tell me what you need", contact_p="A few sentences are enough. I reply by e-mail with a price and a date.",
+ contact_h="Tell me what you need", contact_p="A few sentences are enough. I reply by e-mail with a price and a date.", call_note="Prefer to talk? Write to me and we'll agree a time for a call.",
  f_name="Name", f_mail="Your e-mail", f_msg="What you need", f_send="Send message",
  f_subject="Enquiry from the website", f_body="Name: {name}\nE-mail: {mail}\n\n{msg}",
  foot_h="Talk soon", foot_p="I answer every e-mail. The more specific you are about what you need, the sooner you get a price.",
