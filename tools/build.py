@@ -61,7 +61,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .tab{height:44px;display:flex;align-items:center;padding:0 34px 0 24px;background:var(--ink3);color:var(--bg);clip-path:polygon(0 100%,0 14px,14px 0,calc(100% - 22px) 0,100% 100%)}
 .tab.n{font-family:var(--display);font-weight:500;font-size:26px;letter-spacing:-.01em}
 .tab.s{background:var(--ink2);font-size:15px}
-.folder .kind{position:absolute;right:var(--pad);top:18px;font-size:15px}
+.folder .kind{position:absolute;right:var(--pad);top:-44px;height:44px;display:flex;align-items:center;padding:0 22px;background:var(--ink2);color:var(--bg);font-size:15px}
 .dev{grid-column:1/9;align-self:start;background:var(--ink3);color:var(--bg)}
 .dev .bar{height:40px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 14px;font-size:14px}
 .dev .url{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--bg)}
@@ -81,6 +81,9 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .q{margin:24px 0 0;padding:0}
 .q p{font-family:var(--display);font-weight:500;font-size:1.375rem;line-height:1.25;letter-spacing:-.01em;max-width:30ch}
 .q footer{margin-top:8px;font-size:15px}
+.ci{margin-top:20px;font-size:15px}
+.ci b{font-family:var(--display);font-weight:500;font-size:1.75rem;line-height:1;margin-right:4px;font-variant-numeric:tabular-nums}
+.ci a{text-underline-offset:4px}
 .lh{margin-top:24px}
 .lh p{font-size:14px;color:var(--ink);margin-top:10px}
 .lh ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
@@ -240,7 +243,7 @@ details.bar .items{padding:6px 18px 20px}
   .work header{flex-direction:column;gap:8px}
   .folder{position:relative;top:auto;min-height:0;display:block;padding:40px 20px 28px;margin-top:48px}
   .tabs{left:20px;top:-40px}.tab{height:40px;padding:0 26px 0 18px}.tab.n{font-size:20px}.tab.s{display:none}
-  .folder .kind{position:static;display:block;margin-bottom:16px}
+  .folder .kind{position:static;display:block;height:auto;padding:0;background:none;color:inherit;margin-bottom:16px}
   .dev .tg button{min-height:32px}
   .dev .view{aspect-ratio:3/4}
   .folder .txt{padding-top:20px}
@@ -333,6 +336,9 @@ def lh_scores(slug):
     return out
 
 
+def pid(w): return w["code"].rsplit("/", 1)[-1].lower()
+
+
 def page(T, prefix):
     year = "2026"
     url = SITE + T["path"]
@@ -367,23 +373,24 @@ def page(T, prefix):
         if sc:
             cells = "".join(f'<li><b>{v}</b><span>{esc(c)}</span></li>' for v, c in zip(sc, T["lh_cats"]))
             lh = f'''<div class="lh"><ul>{cells}</ul><p>{T["lh_label"]}. <a href="https://pagespeed.web.dev/analysis?url={w["live"]}&form_factor=mobile">{T["lh_check"]}</a></p></div>'''
+        tests = f'<p class="ci"><b>{w["tests"]}</b> {esc(T["tests_l"])}. <a href="{w["code"]}/actions/workflows/test.yml">{T["tests_check"]}</a></p>' if w.get("tests") else ""
         quote = f'<blockquote class="q"><p>„{esc(w["quote"])}”</p><footer>{esc(w["quote_by"])}</footer></blockquote>' if w.get("quote") else ""
         acts = ""
         if w["live"]:
             acts += f'<a class="btn" href="{w["live"]}">{T["live"]}</a>'
         acts += f'<a class="btn {"o" if w["live"] else ""}" href="{w["code"]}">{T["code"]}</a>'
-        folders += f'''<article class="folder" id="p{n}" style="--n:{n}">
+        folders += f'''<article class="folder" id="{pid(w)}" style="--n:{n}">
 <div class="tabs"><span class="tab n">{esc(w["name"])}</span><span class="tab s">{esc(w["tab2"])}</span></div>
 <span class="kind">{esc(w["kind"])}</span>
 {vis}
-<div class="txt" data-reveal style="--d:2"><p>{esc(w["text"])}</p>{quote}{lh}<div class="acts">{acts}</div></div>
+<div class="txt" data-reveal style="--d:2"><p>{esc(w["text"])}</p>{quote}{tests}{lh}<div class="acts">{acts}</div></div>
 </article>'''
     bars = ""
     svc = T["svc"][:3] + [T["svc"][4], T["svc"][3]]
     for i, s in enumerate(svc):
         items = "".join(f'<div class="it"><span>{esc(a)}</span><span>{esc(b)}</span></div>' for a, b in s["items"])
-        names = {w["name"]: n for n, w in enumerate(T["wk"])}
-        links = ", ".join(f'<a href="#p{names[x]}">{esc(x)}</a>' for x in s.get("ex", []))
+        names = {w["name"]: w for w in T["wk"]}
+        links = ", ".join(f'<a href="#{pid(names[x])}">{esc(x)}</a>' for x in s.get("ex", []))
         if links:
             items += f'<div class="it ex"><span>{esc(T["ex_label"])}</span><span>{links}</span></div>'
         bars += f'<details class="bar"{" open" if i==0 else ""} data-reveal style="--d:{i}"><summary><span>{esc(s["t"])}</span><span class="p">{esc(s["p"])}</span><span class="pl" aria-hidden="true">+</span></summary><div class="items">{items}</div></details>'
@@ -392,7 +399,7 @@ def page(T, prefix):
     for head, rows in T["how"]:
         how += f"<h3>{esc(head)}</h3>" + "".join(f'<div class="r"><span>{esc(a)}</span><i></i><span>{esc(b)}</span></div>' for a, b in rows)
     rules_html = "".join(f"<dt>{esc(a)}</dt><dd>{esc(c)}</dd>" for a, c in T["rules"])
-    faq = "".join(f'<details data-tab="{esc(tab)}" style="--i:{i}"{" open" if i==0 else ""} data-reveal><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for i, (tab, q, a) in enumerate(T["faq"]))
+    faq = "".join(f'<details data-tab="{esc(tab)}" style="--i:{i % 5}"{" open" if i==0 else ""} data-reveal><summary>{esc(q)}</summary><p>{esc(a)}</p></details>' for i, (tab, q, a) in enumerate(T["faq"]))
     i18n = dict(
         services=[dict(id=s["id"], label=s["label"], base=s["base"], extras=s["extras"]) for s in T["q_services"]],
         mail=MAIL, subject=T["q_subject"], intro=T["q_body_intro"], extrasLabel=T["q_body_extras"], none=T["q_body_none"],
