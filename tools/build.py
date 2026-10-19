@@ -1,4 +1,6 @@
 import json, html, os
+
+HERE = os.path.dirname(os.path.abspath(__file__))
 from strings import PL, EN, MAIL, SITE
 
 CSS = r"""
@@ -34,7 +36,9 @@ button{background:none;border:0;padding:0;cursor:pointer}
 
 /* hero */
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:12px;background:var(--ink)}
-.card{min-width:0;overflow:hidden;background:var(--bg);display:flex;flex-direction:column;align-items:center;text-align:center;min-height:calc(100svh - 24px)}
+.card{position:relative;min-width:0;overflow:hidden;background:var(--bg);display:flex;flex-direction:column;align-items:center;text-align:center;min-height:calc(100svh - 24px)}
+.me{position:absolute;right:clamp(20px,3.4vw,48px);top:clamp(84px,11svh,120px);width:clamp(92px,8vw,124px);padding:6px;background:var(--tone);transform:rotate(3deg)}
+.me img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:var(--ink2)}
 .card .mark{margin-top:clamp(28px,7svh,72px);font-size:clamp(3.25rem,5.6vw,5.5rem)}
 .card h1{margin-top:clamp(24px,5svh,48px);font-size:clamp(2.5rem,3.6vw,3.5rem);line-height:1}
 .card .lead{margin:24px auto 32px;max-width:36ch;font-size:1.0625rem;color:var(--ink)}
@@ -210,13 +214,13 @@ details.bar .items{padding:6px 18px 20px}
 .back address a{text-decoration:none}
 .back address a:hover{text-decoration:underline;text-underline-offset:5px}
 .back .stamp{position:absolute;right:56px;top:56px;width:88px;aspect-ratio:3/4;padding:6px;background:var(--bg)}
-.back .stamp img{width:100%;height:100%;object-fit:cover;object-position:0 0;background:var(--ink)}
+.back .stamp img{width:100%;height:100%;object-fit:cover;background:var(--ink)}
 .back .imp{grid-column:1/-1;align-self:end;text-align:center;font-size:13px;color:var(--muted)}
 .back .imp a{color:inherit}
 
 /* motion */
 @media (prefers-reduced-motion:no-preference){
-  .js .card>*:not(.stripe){opacity:0;animation:rise 900ms var(--ease) forwards}
+  .js .card>*:not(.stripe):not(.me){opacity:0;animation:rise 900ms var(--ease) forwards}
   .js .card .mark,.js .card h1{opacity:1;animation:lift 900ms var(--ease) both}
   .js .card .lead{animation-delay:370ms}.js .card .btn{animation-delay:480ms}.js .card .links{animation-delay:600ms}
   @keyframes lift{from{transform:translateY(24px)}to{transform:none}}
@@ -236,7 +240,8 @@ details.bar .items{padding:6px 18px 20px}
   .photo{order:1;position:relative;top:0;height:48svh}
   .slide figcaption{display:none}
   .card{min-height:0;position:relative;z-index:1}
-  .card .mark{font-size:20vw;margin-top:28px}
+  .me{position:static;transform:rotate(-2deg);margin-top:32px;width:104px}
+  .card .mark{font-size:20vw;margin-top:20px}
   .card h1{font-size:8vw}
   .card .links{margin-top:32px}
   .stripe{height:40px}
@@ -320,20 +325,7 @@ form.addEventListener('submit',e=>{
 def esc(s): return html.escape(s, quote=True)
 
 def lh_scores(slug):
-    import glob
-    runs = [json.load(open(f)) for f in sorted(glob.glob(f"../lhx/{slug}-*.json"))]
-    if not runs:
-        return None
-    out = []
-    for key in ("performance", "accessibility", "best-practices", "seo"):
-        vals = [round(r["categories"][key]["score"] * 100) for r in runs if r["categories"][key]["score"] is not None]
-        if not vals:
-            out.append("?")
-        elif min(vals) == max(vals):
-            out.append(str(min(vals)))
-        else:
-            out.append(f"{min(vals)}–{max(vals)}")
-    return out
+    return json.load(open(os.path.join(HERE, "lh.json"))).get(slug)
 
 
 def pid(w): return w["code"].rsplit("/", 1)[-1].lower()
@@ -406,7 +398,7 @@ def page(T, prefix):
         priceLabel=T["q_body_price"], cur=T["q_cur"], outro=T["q_body_outro"], fsubject=T["f_subject"], fbody=T["f_body"])
     ld = {
         "@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin Świerczyński, strony i automatyzacje",
-        "url": SITE, "email": MAIL, "founder": {"@type": "Person", "name": T["full_name"]}, "description": T["jsonld_desc"], "areaServed": "PL", "priceRange": "od 150 zł",
+        "url": SITE, "email": MAIL, "founder": {"@type": "Person", "name": T["full_name"], "image": SITE + "img/marcin.webp"}, "description": T["jsonld_desc"], "areaServed": "PL", "priceRange": "od 150 zł",
         "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": [T["lang"]],
         "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s["label"]}, "priceSpecification": {"@type": "PriceSpecification", "price": s["base"], "priceCurrency": "PLN", "minPrice": s["base"]}} for s in T["q_services"]],
     }
@@ -444,6 +436,7 @@ def page(T, prefix):
 <header class="hero">
   <div class="card">
     <div class="stripe" aria-hidden="true">{stripe}</div>
+    <figure class="me"><img src="{prefix}img/marcin.webp" alt="{esc(T["full_name"])}" width="240" height="300"></figure>
     <p class="mark display">Marcin</p>
     <h1 class="display">{esc(T["h1a"])}<br>{esc(T["h1b"])}</h1>
     <p class="lead">{esc(T["lead"])}</p>
@@ -506,7 +499,7 @@ def page(T, prefix):
 </main>
 <footer class="foot">
   <div class="back">
-    <div class="stamp" aria-hidden="true"><img src="{prefix}img/sukcyna.jpg" alt="" width="1280" height="800" loading="lazy"></div>
+    <div class="stamp" aria-hidden="true"><img src="{prefix}img/marcin.webp" alt="" width="240" height="300" loading="lazy"></div>
     <div><h2 class="display">{T["foot_h"]}</h2><p class="msg">{T["foot_p"]}</p></div>
     <address><a href="mailto:{MAIL}">{MAIL}</a><a href="https://github.com/Marven151">{T["foot_gh"]}</a></address>
     <p class="imp">{T["foot_imprint"].format(year=year)} · <a href="{SITE}informacja/">{T["info_link"]}</a></p>
@@ -517,12 +510,12 @@ def page(T, prefix):
 </body>
 </html>'''
 
-out = os.path.abspath("../marven151.github.io")
+out = os.path.dirname(HERE)
 os.makedirs(out + "/en", exist_ok=True)
 open(out + "/index.html", "w", encoding="utf-8").write(page(PL, ""))
 open(out + "/en/index.html", "w", encoding="utf-8").write(page(EN, "../"))
 os.makedirs(out + "/informacja", exist_ok=True)
-open(out + "/informacja/index.html", "w", encoding="utf-8").write(open("info_page.html", encoding="utf-8").read())
+open(out + "/informacja/index.html", "w", encoding="utf-8").write(open(os.path.join(HERE, "info_page.html"), encoding="utf-8").read())
 open(out + "/robots.txt", "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}sitemap.xml\n")
 open(out + "/sitemap.xml", "w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n<url><loc>{SITE}</loc></url>\n<url><loc>{SITE}en/</loc></url>\n<url><loc>{SITE}informacja/</loc></url>\n</urlset>\n')
 print("built")

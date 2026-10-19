@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500&family=Jost:wght@400;500&display=swap" rel="stylesheet"></noscript>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin Świerczyński, strony i automatyzacje", "url": "https://marven151.github.io/", "email": "marcin.strony.www@gmail.com", "founder": {"@type": "Person", "name": "Marcin Świerczyński"}, "description": "Websites for small businesses, data extraction and automation. Fixed price up front.", "areaServed": "PL", "priceRange": "od 150 zł", "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": ["en"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business website"}, "priceSpecification": {"@type": "PriceSpecification", "price": 990, "priceCurrency": "PLN", "minPrice": 990}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data extraction"}, "priceSpecification": {"@type": "PriceSpecification", "price": 350, "priceCurrency": "PLN", "minPrice": 350}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Script or automation"}, "priceSpecification": {"@type": "PriceSpecification", "price": 250, "priceCurrency": "PLN", "minPrice": 250}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website fixes"}, "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "PLN", "minPrice": 150}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin Świerczyński, strony i automatyzacje", "url": "https://marven151.github.io/", "email": "marcin.strony.www@gmail.com", "founder": {"@type": "Person", "name": "Marcin Świerczyński", "image": "https://marven151.github.io/img/marcin.webp"}, "description": "Websites for small businesses, data extraction and automation. Fixed price up front.", "areaServed": "PL", "priceRange": "od 150 zł", "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": ["en"], "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business website"}, "priceSpecification": {"@type": "PriceSpecification", "price": 990, "priceCurrency": "PLN", "minPrice": 990}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Data extraction"}, "priceSpecification": {"@type": "PriceSpecification", "price": 350, "priceCurrency": "PLN", "minPrice": 350}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Script or automation"}, "priceSpecification": {"@type": "PriceSpecification", "price": 250, "priceCurrency": "PLN", "minPrice": 250}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Website fixes"}, "priceSpecification": {"@type": "PriceSpecification", "price": 150, "priceCurrency": "PLN", "minPrice": 150}}]}</script>
 <style>
 :root{
   --bg:#edccbe; --tone:#e3b9a8; --tone2:#d6a998; --ink:#351a2b; --muted:#6c4857; --ink2:#4a2a3e; --ink3:#241120;
@@ -57,7 +57,9 @@ button{background:none;border:0;padding:0;cursor:pointer}
 
 /* hero */
 .hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;padding:12px;background:var(--ink)}
-.card{min-width:0;overflow:hidden;background:var(--bg);display:flex;flex-direction:column;align-items:center;text-align:center;min-height:calc(100svh - 24px)}
+.card{position:relative;min-width:0;overflow:hidden;background:var(--bg);display:flex;flex-direction:column;align-items:center;text-align:center;min-height:calc(100svh - 24px)}
+.me{position:absolute;right:clamp(20px,3.4vw,48px);top:clamp(84px,11svh,120px);width:clamp(92px,8vw,124px);padding:6px;background:var(--tone);transform:rotate(3deg)}
+.me img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;background:var(--ink2)}
 .card .mark{margin-top:clamp(28px,7svh,72px);font-size:clamp(3.25rem,5.6vw,5.5rem)}
 .card h1{margin-top:clamp(24px,5svh,48px);font-size:clamp(2.5rem,3.6vw,3.5rem);line-height:1}
 .card .lead{margin:24px auto 32px;max-width:36ch;font-size:1.0625rem;color:var(--ink)}
@@ -233,13 +235,13 @@ details.bar .items{padding:6px 18px 20px}
 .back address a{text-decoration:none}
 .back address a:hover{text-decoration:underline;text-underline-offset:5px}
 .back .stamp{position:absolute;right:56px;top:56px;width:88px;aspect-ratio:3/4;padding:6px;background:var(--bg)}
-.back .stamp img{width:100%;height:100%;object-fit:cover;object-position:0 0;background:var(--ink)}
+.back .stamp img{width:100%;height:100%;object-fit:cover;background:var(--ink)}
 .back .imp{grid-column:1/-1;align-self:end;text-align:center;font-size:13px;color:var(--muted)}
 .back .imp a{color:inherit}
 
 /* motion */
 @media (prefers-reduced-motion:no-preference){
-  .js .card>*:not(.stripe){opacity:0;animation:rise 900ms var(--ease) forwards}
+  .js .card>*:not(.stripe):not(.me){opacity:0;animation:rise 900ms var(--ease) forwards}
   .js .card .mark,.js .card h1{opacity:1;animation:lift 900ms var(--ease) both}
   .js .card .lead{animation-delay:370ms}.js .card .btn{animation-delay:480ms}.js .card .links{animation-delay:600ms}
   @keyframes lift{from{transform:translateY(24px)}to{transform:none}}
@@ -259,7 +261,8 @@ details.bar .items{padding:6px 18px 20px}
   .photo{order:1;position:relative;top:0;height:48svh}
   .slide figcaption{display:none}
   .card{min-height:0;position:relative;z-index:1}
-  .card .mark{font-size:20vw;margin-top:28px}
+  .me{position:static;transform:rotate(-2deg);margin-top:32px;width:104px}
+  .card .mark{font-size:20vw;margin-top:20px}
   .card h1{font-size:8vw}
   .card .links{margin-top:32px}
   .stripe{height:40px}
@@ -296,6 +299,7 @@ details.bar .items{padding:6px 18px 20px}
 <header class="hero">
   <div class="card">
     <div class="stripe" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <figure class="me"><img src="../img/marcin.webp" alt="Marcin Świerczyński" width="240" height="300"></figure>
     <p class="mark display">Marcin</p>
     <h1 class="display">A website from PLN 990.<br>Price up front.</h1>
     <p class="lead">I&#x27;m Marcin Świerczyński. I build websites for small businesses, pull data into spreadsheets and write scripts for tedious jobs. You get all the code.</p>
@@ -427,7 +431,7 @@ GET    /api/stats/summary</code></pre></div>
 </main>
 <footer class="foot">
   <div class="back">
-    <div class="stamp" aria-hidden="true"><img src="../img/sukcyna.jpg" alt="" width="1280" height="800" loading="lazy"></div>
+    <div class="stamp" aria-hidden="true"><img src="../img/marcin.webp" alt="" width="240" height="300" loading="lazy"></div>
     <div><h2 class="display">Talk soon</h2><p class="msg">I answer every e-mail. The more specific you are about what you need, the sooner you get a price.</p></div>
     <address><a href="mailto:marcin.strony.www@gmail.com">marcin.strony.www@gmail.com</a><a href="https://github.com/Marven151">GitHub</a></address>
     <p class="imp">© 2026 Marcin Świerczyński · <a href="https://marven151.github.io/informacja/">Data processing information</a></p>
