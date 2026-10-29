@@ -397,7 +397,7 @@ def page(T, prefix):
         mail=MAIL, subject=T["q_subject"], intro=T["q_body_intro"], extrasLabel=T["q_body_extras"], none=T["q_body_none"],
         priceLabel=T["q_body_price"], cur=T["q_cur"], outro=T["q_body_outro"], fsubject=T["f_subject"], fbody=T["f_body"])
     ld = {
-        "@context": "https://schema.org", "@type": "ProfessionalService", "name": "Marcin Świerczyński, strony i automatyzacje",
+        "@context": "https://schema.org", "@type": "ProfessionalService", "name": T["jsonld_name"],
         "url": SITE, "email": MAIL, "founder": {"@type": "Person", "name": T["full_name"], "image": SITE + "img/marcin.webp"}, "description": T["jsonld_desc"], "areaServed": "PL", "priceRange": "od 150 zł",
         "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": [T["lang"]],
         "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s["label"]}, "priceSpecification": {"@type": "PriceSpecification", "price": s["base"], "priceCurrency": "PLN", "minPrice": s["base"]}} for s in T["q_services"]],
