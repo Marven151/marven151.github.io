@@ -48,8 +48,8 @@ PL = dict(
        live="https://marven151.github.io/sukcyna/", code="https://github.com/Marven151/sukcyna", lh="sukcyna"),
   dict(name="Apartament Gąski", kind="Strona", tab2="HTML · CSS · JS", img="img/gaski-apartament.webp", alt="Strona apartamentu nad morzem: nagłówek 20 metrów do morza i zdjęcia plaży",
        text="Strona prawdziwego apartamentu nad morzem, z kalendarzem. Gość wybiera daty i dostaje gotowego maila z terminem. Właściciel nie ma panelu: zajęte dni zaznacza u siebie i wrzuca plik z dostępnością. Dokładny adres podaje dopiero po potwierdzeniu rezerwacji.",
-       live="https://marven151.github.io/gaski-apartament/", code="https://github.com/Marven151/gaski-apartament", lh="gaski-apartament",
-       quote="Super strona. Pomogła mi w sprzedaży na Bookingu i przyciągnęła uwagę klientów.", quote_by="właściciel apartamentu, mój tata"),
+       live="", code="", term="Gąski, Poland",
+       quote="Super strona. Pomogła mi w sprzedaży na Bookingu i przyciągnęła uwagę klientów.", quote_by="właściciel apartamentu (firma rodzinna)"),
   dict(name="Panel rezerwacji", kind="Aplikacja", tab2="Node · SQLite", img="img/booking-panel.webp", alt="Panel rezerwacji: kalendarz z zajętymi terminami, cena pobytu i formularz zapytania",
        text="System zapytań o termin dla małego apartamentu. Gość wybiera daty na kalendarzu, widzi cenę i wysyła zapytanie, a właściciel w panelu potwierdza, odrzuca albo blokuje daty. Działa na prawdziwym serwerze z bazą danych i testami automatycznymi. Wersja online działa w przeglądarce i trzyma dane tylko u ciebie, hasło do panelu to demo.",
        live="https://marven151.github.io/booking-panel/", code="https://github.com/Marven151/booking-panel", tests=19, lh="booking-panel"),
@@ -91,7 +91,7 @@ PL = dict(
  how_end="Na końcu masz gotowe pliki i cały kod",
  faq_h="Pytania",
  faq=[
-  ("Klienci","Masz już klientów?","Jednego: apartament w Gąskach to strona dla mojego taty, który mówi, że pomogła mu w sprzedaży na Bookingu i przyciągnęła uwagę klientów. Resztę projektów zrobiłem dla siebie, dlatego pierwsze zlecenia wyceniam ostrożnie i pokazuję postęp na bieżąco, żebyś nie kupował kota w worku."),
+  ("Klienci","Masz już klientów?","Apartament w Gąskach to płatna strona dla firmy rodzinnej; pozostałe projekty zrobiłem sam, w tym samym standardzie i z publicznym kodem. Dlatego każde zlecenie na dane zaczyna się od darmowej próbki, a strona od darmowego szkicu: widzisz efekt, zanim zapłacisz złotówkę."),
   ("Cena","Ile to naprawdę kosztuje?","Kwoty w wycenie to cena początkowa dla małych projektów. Dokładną podaję w mailu, zanim zacznę, i nie zmienia się, dopóki zakres jest ten sam."),
   ("Gwarancje","Co obiecujesz, a czego nie?","Obiecuję to, co sprawdzisz sam: stronę, która działa na telefonie i ma https, wynik Lighthouse, który zmierzysz bez mnie, i cenę, która nie rośnie, dopóki zakres jest ten sam. Nie obiecuję pierwszego miejsca w Google ani konkretnej liczby klientów, bo tego nikt uczciwie nie zagwarantuje."),
   ("Kod","Czyj jest kod i co, jeśli zniknę?","Twój. Dostajesz wszystkie pliki, a stronę mogę postawić na twoim koncie, na domenie zarejestrowanej na ciebie. Nic nie zależy ode mnie, więc kolejne zmiany może zrobić każdy programista, bez mojej pomocy."),
@@ -106,7 +106,7 @@ PL = dict(
  foot_imprint="© {year} Marcin Świerczyński",
  foot_gh="GitHub", foot_mail_l="E-mail",
  jsonld_desc="Strony dla małych firm, pobieranie danych z publicznych stron, listy firm, monitoring i automatyzacje. Cena z góry.",
- jsonld_name="Marcin Świerczyński, strony, dane i automatyzacje",
+ jsonld_area=["PL"], jsonld_currency="PLN", jsonld_price_range="od 150 zł", jsonld_name="Marcin Świerczyński, strony, dane i automatyzacje",
  skip="Przejdź do treści",
 )
 
@@ -156,8 +156,8 @@ EN.update(
        live="https://marven151.github.io/sukcyna/", code="https://github.com/Marven151/sukcyna", lh="sukcyna"),
   dict(name="Apartament Gąski", kind="Website", tab2="HTML · CSS · JS", img="img/gaski-apartament.webp", alt="Holiday apartment website: headline 20 metres to the sea and beach photographs",
        text="The website of a real seaside apartment, with a booking calendar. Guests pick dates and get a ready-made e-mail with them filled in. The owner has no admin panel: they mark booked days on their side and upload an availability file. The exact address is given only after a booking is confirmed.",
-       live="https://marven151.github.io/gaski-apartament/", code="https://github.com/Marven151/gaski-apartament", lh="gaski-apartament",
-       quote="Great website. It helped me sell on Booking and caught clients' attention.", quote_by="the apartment's owner, my dad"),
+       live="", code="", term="Gąski, Poland",
+       quote="Great website. It helped me sell on Booking and caught clients' attention.", quote_by="owner of the apartment (family business)"),
   dict(name="Booking panel", kind="App", tab2="Node · SQLite", img="img/booking-panel.webp", alt="Booking panel: a calendar with booked dates, the price of the stay and an enquiry form",
        text="A booking-request system for a small apartment. A guest picks dates on a calendar, sees the price and sends a request, and the owner confirms, declines or blocks dates in a panel. It runs on a real server with a database and automated tests. The online version runs in the browser and keeps data only on your side, the panel password is demo.",
        live="https://marven151.github.io/booking-panel/", code="https://github.com/Marven151/booking-panel", tests=19, lh="booking-panel"),
@@ -199,7 +199,7 @@ EN.update(
  how_end="At the end you have the finished files and all the code",
  faq_h="Questions",
  faq=[
-  ("Clients","Do you have clients yet?","One: the apartment in Gąski is a website for my dad, who says it helped him sell on Booking and caught clients' attention. I built the other projects for myself, so I price the first jobs carefully and show progress as I go, so you're not buying a pig in a poke."),
+  ("Clients","Do you have clients yet?","The Gąski apartment is a paying site for a family business; the other projects are my own, built to the same standard and with the code public. Because I'm early, every data job starts with a free sample and every website with a free sketch, so you see the work before you pay a cent."),
   ("Price","What does it really cost?","The figures in the estimate are starting prices for small projects. I give the exact price by e-mail before I start, and it doesn't change while the scope stays the same."),
   ("Promises","What do you promise, and what not?","What you can check yourself: a site that works on a phone and has https, a Lighthouse score you can measure without me, and a price that doesn't grow while the scope stays the same. I don't promise first place on Google or a set number of customers, because nobody can honestly guarantee that."),
   ("Code","Whose is the code, and what if I disappear?","Yours. You get every file, and I can put the site on your own account, on a domain registered to you. Nothing depends on me, so any developer can make the next changes without my help."),
@@ -216,6 +216,6 @@ EN.update(
  foot_imprint="© {year} Marcin Świerczyński",
  foot_gh="GitHub", foot_mail_l="E-mail",
  jsonld_desc="Data extraction, business lead lists, monitoring and websites for small businesses. Fixed price up front.",
- jsonld_name="Marcin Świerczyński, data extraction and websites",
+ jsonld_area=["US","GB","AU","CA","PL"], jsonld_currency="USD", jsonld_price_range="$79–$450", jsonld_name="Marcin Świerczyński, data extraction and websites",
  skip="Skip to content",
 )

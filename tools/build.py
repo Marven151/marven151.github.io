@@ -339,7 +339,7 @@ def page(T, prefix):
     shots = [w for w in T["wk"] if w["img"]][:4]
     lazy = ' loading="lazy"'
     order = ["Northside Bikes", "Sukcyna", "Apartament Gąski", "Book scraper"]
-    shots = [w for n in order for w in T["wk"] if w["name"] == n]
+    shots = [w for n in order for w in T["wk"] if w["name"] == n and w["live"]]
     photo = "".join('<figure class="slide"><div class="frm"><div class="bar"><span class="url">%s</span></div><img src="%s%s" alt="" width="1280" height="800"%s></div><figcaption>%s · %s</figcaption></figure>' % (esc(w["live"].replace("https://", "")), prefix, w["img"], "" if i == 0 else lazy, esc(w["name"]), esc(w["kind"])) for i, w in enumerate(shots))
     folders = ""
     for n, w in enumerate(T["wk"]):
@@ -370,7 +370,8 @@ def page(T, prefix):
         acts = ""
         if w["live"]:
             acts += f'<a class="btn" href="{w["live"]}">{T["live"]}</a>'
-        acts += f'<a class="btn {"o" if w["live"] else ""}" href="{w["code"]}">{T["code"]}</a>'
+        if w["code"]:
+            acts += f'<a class="btn {"o" if w["live"] else ""}" href="{w["code"]}">{T["code"]}</a>'
         folders += f'''<article class="folder" id="{pid(w)}" style="--n:{n}">
 <div class="tabs"><span class="tab n">{esc(w["name"])}</span><span class="tab s">{esc(w["tab2"])}</span></div>
 <span class="kind">{esc(w["kind"])}</span>
@@ -378,7 +379,7 @@ def page(T, prefix):
 <div class="txt" data-reveal style="--d:2"><p>{esc(w["text"])}</p>{quote}{tests}{lh}<div class="acts">{acts}</div></div>
 </article>'''
     bars = ""
-    svc = T["svc"][:3] + [T["svc"][4], T["svc"][3]]
+    svc = T["svc"][:3] + [T["svc"][4], T["svc"][3], T["svc"][5]]
     for i, s in enumerate(svc):
         items = "".join(f'<div class="it"><span>{esc(a)}</span><span>{esc(b)}</span></div>' for a, b in s["items"])
         names = {w["name"]: w for w in T["wk"]}
@@ -398,9 +399,9 @@ def page(T, prefix):
         priceLabel=T["q_body_price"], cur=T["q_cur"], outro=T["q_body_outro"], fsubject=T["f_subject"], fbody=T["f_body"])
     ld = {
         "@context": "https://schema.org", "@type": "ProfessionalService", "name": T["jsonld_name"],
-        "url": SITE, "email": MAIL, "founder": {"@type": "Person", "name": T["full_name"], "image": SITE + "img/marcin.webp"}, "description": T["jsonld_desc"], "areaServed": "PL", "priceRange": "od 150 zł",
+        "url": SITE, "email": MAIL, "founder": {"@type": "Person", "name": T["full_name"], "image": SITE + "img/marcin.webp"}, "description": T["jsonld_desc"], "areaServed": T["jsonld_area"], "priceRange": T["jsonld_price_range"],
         "knowsAbout": ["web development", "web scraping", "automation"], "inLanguage": [T["lang"]],
-        "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s["label"]}, "priceSpecification": {"@type": "PriceSpecification", "price": s["base"], "priceCurrency": "PLN", "minPrice": s["base"]}} for s in T["q_services"]],
+        "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s["label"]}, "priceSpecification": {"@type": "PriceSpecification", "price": s["base"], "priceCurrency": T["jsonld_currency"], "minPrice": s["base"]}} for s in T["q_services"]],
     }
     og = SITE + "img/og.jpg"
     return f'''<!DOCTYPE html>
