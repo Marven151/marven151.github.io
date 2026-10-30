@@ -42,6 +42,15 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .card .mark{margin-top:clamp(28px,7svh,72px);font-size:clamp(3.25rem,5.6vw,5.5rem)}
 .card h1{margin-top:clamp(24px,5svh,48px);font-size:clamp(2.5rem,3.6vw,3.5rem);line-height:1}
 .card .lead{margin:24px auto 32px;max-width:36ch;font-size:1.0625rem;color:var(--ink)}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:min(100% - 40px,600px);margin:0 auto;text-align:left}
+.door{display:flex;flex-direction:column;gap:6px;padding:18px 20px 16px;background:var(--ink);color:var(--bg)}
+.door+.door{background:var(--tone2);color:var(--ink)}
+.door p{font-family:var(--display);font-weight:500;font-size:1.375rem;line-height:1.1;letter-spacing:-.01em;margin-bottom:6px}
+.door a{display:flex;justify-content:space-between;gap:12px;padding:6px 0;font-size:15px;font-weight:500;text-decoration:none}
+.door a span{transition:transform .2s var(--ease)}
+.door a:hover{text-decoration:underline;text-underline-offset:4px}
+.door a:hover span{transform:translateX(4px)}
+.card .hnote{margin:18px auto 0;max-width:44ch;padding:0 20px;font-size:15px;color:var(--ink);text-wrap:balance}
 .card .links{margin-top:auto;padding:28px 20px;display:flex;gap:28px;flex-wrap:wrap;justify-content:center;font-size:15px}
 .card .links a{text-decoration:none;padding:6px 0}
 .card .links a:hover{text-decoration:underline;text-underline-offset:5px}
@@ -61,6 +70,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .work header p{font-size:15px;color:var(--bg)}
 .folder{--n:0;position:sticky;top:calc(var(--n) * 64px);min-height:82svh;background:var(--bg);color:var(--ink);margin-top:44px;padding:64px var(--pad) 40px;display:grid;grid-template-columns:repeat(12,1fr);column-gap:var(--gap);align-content:start}
 .folder:nth-of-type(even){background:var(--tone)}
+.folder.cap::before{content:"";position:absolute;left:0;right:0;top:-44px;height:44px;background:var(--ink)}
 .tabs{position:absolute;left:var(--pad);top:-44px;display:flex;gap:6px}
 .tab{height:44px;display:flex;align-items:center;padding:0 34px 0 24px;background:var(--ink3);color:var(--bg);clip-path:polygon(0 100%,0 14px,14px 0,calc(100% - 22px) 0,100% 100%)}
 .tab.n{font-family:var(--display);font-weight:500;font-size:26px;letter-spacing:-.01em}
@@ -104,10 +114,10 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .dev .view.api pre{margin:0;font:15px/1.9 ui-monospace,Menlo,monospace;color:var(--bg)}
 
 /* services */
-.offer{background:var(--bg);padding:clamp(96px,12vw,200px) var(--pad) clamp(240px,26vw,420px)}
-.col{max-width:620px;margin:0 auto;container-type:inline-size}
+.offer{background:var(--bg);padding:clamp(96px,12vw,200px) var(--pad)}
+.col{max-width:720px;margin:0 auto;container-type:inline-size}
 .giant{font-family:var(--display);font-weight:500;text-transform:uppercase;font-size:28cqw;line-height:.8;letter-spacing:-.02em;margin-bottom:24px;white-space:nowrap}
-details.bar{background:var(--tone);margin-bottom:6px}
+details.bar{background:var(--tone);margin-bottom:6px;scroll-margin-top:24px}
 details.bar summary{list-style:none;display:flex;align-items:center;gap:12px;min-height:60px;padding:6px 18px;cursor:pointer;font-weight:500;font-size:17px;transition:background .2s}
 details.bar summary::-webkit-details-marker{display:none}
 details.bar summary:hover{background:var(--tone2)}
@@ -116,7 +126,7 @@ details.bar summary .pl{width:18px;text-align:center;font-size:18px;line-height:
 details.bar[open] summary .pl{transform:rotate(45deg)}
 details.bar .items{padding:6px 18px 20px}
 .items .it{display:flex;justify-content:space-between;gap:20px;margin-top:14px;font-size:16px}
-.items .it span:last-child{color:#56303f;text-align:right}
+.items .it span:last-child{flex:none;max-width:45%;color:#56303f;text-align:right}
 .items .it.ex{margin-top:20px;font-weight:500}
 .items .it.ex span:last-child a{color:var(--ink);text-underline-offset:4px}
 .items .it.ex span:last-child a:hover{text-decoration-thickness:2px}
@@ -222,7 +232,7 @@ details.bar .items{padding:6px 18px 20px}
 @media (prefers-reduced-motion:no-preference){
   .js .card>*:not(.stripe):not(.me){opacity:0;animation:rise 900ms var(--ease) forwards}
   .js .card .mark,.js .card h1{opacity:1;animation:lift 900ms var(--ease) both}
-  .js .card .lead{animation-delay:370ms}.js .card .btn{animation-delay:480ms}.js .card .links{animation-delay:600ms}
+  .js .card .lead{animation-delay:370ms}.js .card .doors{animation-delay:480ms}.js .card .hnote{animation-delay:540ms}.js .card .links{animation-delay:600ms}
   @keyframes lift{from{transform:translateY(24px)}to{transform:none}}
   @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
   .slide{animation:xfade 28s infinite}
@@ -243,7 +253,10 @@ details.bar .items{padding:6px 18px 20px}
   .me{position:static;transform:rotate(-2deg);margin-top:32px;width:104px}
   .card .mark{font-size:20vw;margin-top:20px}
   .card h1{font-size:8vw}
-  .card .links{margin-top:32px}
+  .card .links{margin-top:32px;gap:8px 20px}
+  .doors{grid-template-columns:1fr;width:calc(100% - 32px)}
+  .items .it{flex-direction:column;gap:2px}
+  .items .it span:last-child{max-width:none;text-align:left}
   .stripe{height:40px}
   .work header{flex-direction:column;gap:8px}
   .folder{position:relative;top:auto;min-height:0;display:block;padding:40px 20px 28px;margin-top:48px}
@@ -313,6 +326,9 @@ devs.forEach(d=>{
   d.querySelectorAll('.tg button').forEach(bt=>bt.addEventListener('click',()=>{d.dataset.mode=bt.dataset.mode;d.querySelectorAll('.tg button').forEach(x=>x.classList.toggle('on',x===bt));fit(d)}));
   const v=d.querySelector('.view');v.addEventListener('click',()=>v.classList.add('act'));v.addEventListener('mouseleave',()=>v.classList.remove('act'));
 });
+function openHash(){const t=location.hash&&document.getElementById(decodeURIComponent(location.hash.slice(1)));if(t&&t.tagName==='DETAILS')t.open=true}
+addEventListener('hashchange',openHash);openHash();
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>{const t=document.getElementById(a.getAttribute('href').slice(1));if(t&&t.tagName==='DETAILS')t.open=true}));
 const form=$('#contactForm');
 form.addEventListener('submit',e=>{
   e.preventDefault();
@@ -328,7 +344,12 @@ def lh_scores(slug):
     return json.load(open(os.path.join(HERE, "lh.json"))).get(slug)
 
 
-def pid(w): return w["code"].rsplit("/", 1)[-1].lower()
+def pid(w): return w.get("id") or w["code"].rsplit("/", 1)[-1].lower()
+
+
+# Work order, by what a buyer asks for most
+ORDER = ["site-kit", "site-fix-demo", "promo-video", "faq-bot", "sheets-automations", "csv-to-report", "book-scraper", "sheet-merge", "northside-bikes", "sukcyna", "gaski", "booking-panel", "studybuddy"]
+STACK = 3  # folders deeper than this stick at the same offset
 
 
 def page(T, prefix):
@@ -336,13 +357,12 @@ def page(T, prefix):
     url = SITE + T["path"]
     other = SITE + T["other_path"]
     stripe = "".join("<i></i>" for _ in range(60))
-    shots = [w for w in T["wk"] if w["img"]][:4]
+    wk = sorted(T["wk"], key=lambda w: ORDER.index(pid(w)))
     lazy = ' loading="lazy"'
-    order = ["Northside Bikes", "Sukcyna", "Apartament Gąski", "Book scraper"]
-    shots = [w for n in order for w in T["wk"] if w["name"] == n and w["live"]]
+    shots = [w for n in ["site-kit", "faq-bot", "promo-video", "site-fix-demo"] for w in wk if pid(w) == n]
     photo = "".join('<figure class="slide"><div class="frm"><div class="bar"><span class="url">%s</span></div><img src="%s%s" alt="" width="1280" height="800"%s></div><figcaption>%s · %s</figcaption></figure>' % (esc(w["live"].replace("https://", "")), prefix, w["img"], "" if i == 0 else lazy, esc(w["name"]), esc(w["kind"])) for i, w in enumerate(shots))
     folders = ""
-    for n, w in enumerate(T["wk"]):
+    for n, w in enumerate(wk):
         bar_url = w["live"].replace("https://", "") if w["live"] else w.get("term", "GitHub")
         if w["live"]:
             tog = f'<span class="tg"><button type="button" class="on" data-mode="d">{T["preview_desktop"]}</button><button type="button" data-mode="p">{T["preview_phone"]}</button></span>'
@@ -372,22 +392,22 @@ def page(T, prefix):
             acts += f'<a class="btn" href="{w["live"]}">{T["live"]}</a>'
         if w["code"]:
             acts += f'<a class="btn {"o" if w["live"] else ""}" href="{w["code"]}">{T["code"]}</a>'
-        folders += f'''<article class="folder" id="{pid(w)}" style="--n:{n}">
+        folders += f'''<article class="folder{" cap" if n >= STACK else ""}" id="{pid(w)}" style="--n:{min(n, STACK)}">
 <div class="tabs"><span class="tab n">{esc(w["name"])}</span><span class="tab s">{esc(w["tab2"])}</span></div>
 <span class="kind">{esc(w["kind"])}</span>
 {vis}
 <div class="txt" data-reveal style="--d:2"><p>{esc(w["text"])}</p>{quote}{tests}{lh}<div class="acts">{acts}</div></div>
 </article>'''
     bars = ""
-    svc = T["svc"][:3] + [T["svc"][4], T["svc"][3], T["svc"][5]]
-    for i, s in enumerate(svc):
+    for i, s in enumerate(T["svc"]):
         items = "".join(f'<div class="it"><span>{esc(a)}</span><span>{esc(b)}</span></div>' for a, b in s["items"])
         names = {w["name"]: w for w in T["wk"]}
         links = ", ".join(f'<a href="#{pid(names[x])}">{esc(x)}</a>' for x in s.get("ex", []))
         if links:
             items += f'<div class="it ex"><span>{esc(T["ex_label"])}</span><span>{links}</span></div>'
-        bars += f'<details class="bar"{" open" if i==0 else ""} data-reveal style="--d:{i}"><summary><span>{esc(s["t"])}</span><span class="p">{esc(s["p"])}</span><span class="pl" aria-hidden="true">+</span></summary><div class="items">{items}</div></details>'
+        bars += f'<details class="bar" id="{s["id"]}"{" open" if i==0 else ""} data-reveal style="--d:{i}"><summary><span>{esc(s["t"])}</span><span class="p">{esc(s["p"])}</span><span class="pl" aria-hidden="true">+</span></summary><div class="items">{items}</div></details>'
     svc_opts = "".join(f'<label class="opt"><input type="radio" name="svc" value="{s["id"]}"{" checked" if i==0 else ""}><span class="dot"></span><span>{esc(s["label"])}</span></label>' for i, s in enumerate(T["q_services"]))
+    doors = "".join('<div class="door"><p>%s</p>%s</div>' % (esc(t), "".join(f'<a href="{h}">{esc(l)}<span aria-hidden="true">→</span></a>' for l, h in links)) for t, links in T["doors"])
     how = ""
     for head, rows in T["how"]:
         how += f"<h3>{esc(head)}</h3>" + "".join(f'<div class="r"><span>{esc(a)}</span><i></i><span>{esc(b)}</span></div>' for a, b in rows)
@@ -441,20 +461,21 @@ def page(T, prefix):
     <p class="mark display">Marcin</p>
     <h1 class="display">{esc(T["h1a"])}<br>{esc(T["h1b"])}</h1>
     <p class="lead">{esc(T["lead"])}</p>
-    <a class="btn" href="#wycena">{esc(T["cta"])}</a>
+    <div class="doors">{doors}</div>
+    <p class="hnote">{esc(T["hero_note"])}</p>
     <nav class="links" aria-label="{T["nav_aria"]}">
-      <a href="#prace">{T["nav_work"]}</a><a href="#jak">{T["nav_how"]}</a><a href="#pytania">{T["nav_faq"]}</a><a href="{other}" hreflang="{"en" if T["lang"]=="pl" else "pl"}" lang="{"en" if T["lang"]=="pl" else "pl"}" aria-label="{T["other_label"]}, {esc(T["other_name"])}">{T["other_label"]}</a>
+      <a href="#uslugi">{T["nav_svc"]}</a><a href="#prace">{T["nav_work"]}</a><a href="#wycena">{T["nav_quote"]}</a><a href="#pytania">{T["nav_faq"]}</a><a href="{other}" hreflang="{"en" if T["lang"]=="pl" else "pl"}" lang="{"en" if T["lang"]=="pl" else "pl"}" aria-label="{T["other_label"]}, {esc(T["other_name"])}">{T["other_label"]}</a>
     </nav>
   </div>
   <div class="photo" aria-hidden="true">{photo}</div>
 </header>
 <main id="main">
+<section class="offer" id="uslugi" aria-label="{T["offer_aria"]}">
+  <div class="col"><h2 class="giant" data-reveal style="font-size:{min(28, round(160 / len(T["offer_h"]), 1))}cqw">{T["offer_h"]}</h2>{bars}<p class="cta" data-reveal>{T["offer_cta"]} <a href="#kontakt">{T["offer_cta_link"]}</a></p></div>
+</section>
 <section class="work" id="prace" aria-labelledby="h-work">
   <header><h2 class="display" id="h-work">{T["work_h"]}</h2><p>{T["work_note"]}</p></header>
   {folders}
-</section>
-<section class="offer" aria-label="{T["offer_aria"]}">
-  <div class="col"><h2 class="giant" data-reveal style="font-size:{min(28, round(160 / len(T["offer_h"]), 1))}cqw">{T["offer_h"]}</h2>{bars}<p class="cta" data-reveal>{T["offer_cta"]} <a href="#kontakt">{T["offer_cta_link"]}</a></p></div>
 </section>
 <section class="quote" id="wycena" aria-labelledby="h-quote">
   <div class="ticket" data-reveal>

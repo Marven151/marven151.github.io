@@ -4,7 +4,7 @@ from strings import MAIL, SITE
 
 URL = SITE + "en/fix/"
 TITLE = "Website fix for a fixed price"
-DESC = "Mobile layout, HTTPS, a contact form that sends nothing, an out-of-date footer, slow photos: fixed for $90–$300, paid when you've checked it works."
+DESC = "Mobile layout, HTTPS, a contact form that sends nothing, an out-of-date footer, slow photos: fixed for $60–$300, paid when you've checked it works."
 
 PRICES = [
     ("Phone layout", "$90", "Your site shows the desktop version on a phone and people pinch to read it. I add the mobile layout so it fits any screen."),
@@ -96,7 +96,7 @@ def page():
 <header><div class="wrap">
 <p class="kicker">Marcin Świerczyński · web developer, Poland · for US small businesses</p>
 <h1 class="display">Your website has a problem. I'll fix it for a fixed price.</h1>
-<p>You got my e-mail because I found something concrete on your site: a layout that breaks on a phone, a "Not secure" label, a form that sends nothing, photos that take ten seconds to load. I fix that kind of thing for $90–$300, and you only pay when you've checked that it works.</p>
+<p>You got my e-mail because I found something concrete on your site: a layout that breaks on a phone, a "Not secure" label, a form that sends nothing, photos that take ten seconds to load. I fix that kind of thing for $60–$300, and you only pay when you've checked that it works.</p>
 <a class="btn" href="#contact">Tell me it's fine to look</a>
 </div></header>
 <div class="stripe">{"".join("<i></i>" for _ in range(80))}</div>
